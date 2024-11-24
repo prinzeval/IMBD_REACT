@@ -1,48 +1,27 @@
-// import React from 'react'
-
-// const MovieCard = ({ movie }) => {
-//     return (
-//         <div className='container'>
-//             <div className='movie'>
-//                 <div>
-//                     <p>{movie.Year}</p>
-//                 </div>
-
-//                 <div>
-//                     <img src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/400'} alt='movie.Title' />
-//                 </div>
-//                 <div>
-//                     <span>{movie.Type}</span>
-//                     <h3>{movie.imdbID}</h3>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-
-// };
-
-// export default MovieCard;
-
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
+  const iframeUrl = Type === 'movie' 
+    ? `https://vidsrc.xyz/embed/movie?imdb=${imdbID}`
+    : `https://vidsrc.xyz/embed/tv?imdb=${imdbID}&season=1&episode=1`;
+
   return (
-    <div className="movie" key={imdbID}>
-      <div>
-        <p>{Year}</p>
+    <Link to={`/movie/${imdbID}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <div className="movie" key={imdbID}>
+        <div>
+          <p>{Year}</p>
+        </div>
+        <div>
+          <img src={Poster !== "N/A" ? Poster : "https://via.placeholder.com/400"} alt={Title} />
+        </div>
+        <div>
+          <span>{Type}</span>
+          <h3>{Title}</h3>
+        </div>
       </div>
-
-      <div>
-        <img src={Poster !== "N/A" ? Poster : "https://via.placeholder.com/400"} alt={Title} />
-      </div>
-
-      <div>
-        <span>{Type}</span>
-        <h3>{Title}</h3>
-      </div>
-    </div>
+    </Link>
   );
-}
+};
 
 export default MovieCard;

@@ -1,61 +1,107 @@
-import { useEffect, useState } from 'react';
-import './APP.css';
-import MovieCard from './MovieCard';
-import searchIcon from './search.svg';
+// import React, { useState } from "react";
+// import Navbar from "./components/Navbar";
+// import Sidebar from "./components/Sidebar";
+// import FeaturedContent from "./components/FeaturedContent";
+// import MovieList from "./components/MovieList";
+// import "./App.css";
 
-const API_URL = 'https://www.omdbapi.com?apikey=1f841ba6';
+// const App = () => {
+//   const [isActive, setIsActive] = useState(false);
 
-// const movie1 = {
-//   "Title": "Italian Spiderman",
-//   "Year": "2007",
-//   "imdbID": "tt2705436",
-//   "Type": "movie",
-//   "Poster": "https://m.media-amazon.com/images/M/MV5BYWNiMmNlNmQtZTI2MS00MzAxLTgxM2QtNDY3ZGQxNDMwZDgzXkEyXkFqcGc@._V1_SX300.jpg"
-// }
+//   const toggleActive = () => {
+//     setIsActive(!isActive);
+//   };
+
+//   const movieData = [
+//     { id: 1, title: "Movie 1", image: "https://f.woowoowoowoo.net/resize/250x400/93/02/930252333380d1876be10fe6d4963412/930252333380d1876be10fe6d4963412.jpg" },
+//     { id: 2, title: "Movie 2", image: "https://f.woowoowoowoo.net/resize/250x400/93/02/930252333380d1876be10fe6d4963412/930252333380d1876be10fe6d4963412.jpg" },
+//   ];
+
+//   return (
+//     <div className={`app ${isActive ? "active" : ""}`}>
+//       <Navbar toggleActive={toggleActive} />
+//       <Sidebar />
+//       <div className="container">
+//         <FeaturedContent
+//           background="https://f.woowoowoowoo.net/resize/250x400/93/02/930252333380d1876be10fe6d4963412/930252333380d1876be10fe6d4963412.jpg"
+//           titleSrc="https://via.placeholder.com/200x50"
+//           description="This is a sample featured content description."
+//         />
+//         <MovieList title="SAMPLE MOVIE LIST" movies={movieData} />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MovieCard from "./MovieCard";
+import MovieDetails from "./MovieDetails"; // Import MovieDetails page
+import SearchIcon from "./search.svg";
+import "./App.css";
+
+const API_URL = "http://www.omdbapi.com?apikey=b6003d8a"; // API key for movie search
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(""); // Store search term
+  const [movies, setMovies] = useState([]); // Store search results
 
-  const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
-    const data = await response.json();
-
-    setMovies(data.Search);
-  }
   useEffect(() => {
-    searchMovies('Friends')
+    searchMovies("Batman"); // Default search term on load
   }, []);
 
+  const searchMovies = async (title) => {
+    const response = await fetch(`${API_URL}&s=${title}`); // Fetch search results from OMDB API
+    const data = await response.json();
+    setMovies(data.Search); // Set movie results to state
+  };
+
   return (
-    <div className='app'>
-      <h1>Mytvv</h1>
+    <Router>
+      <div className="app">
+        <h1>MovieLand</h1>
 
-      <div className='search'>
-        <input placeholder='Search for movies'
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <img
-          src={searchIcon}
-          alt="search"
-          onClick={() => searchMovies(searchTerm)} />
+        <div className="search">
+          <input
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search for movies"
+          />
+          <img
+            src={SearchIcon}
+            alt="search"
+            onClick={() => searchMovies(searchTerm)} // Trigger search
+          />
+        </div>
+
+        <Routes>
+          {/* Home Route */}
+          <Route
+            path="/"
+            element={
+              <>
+                {movies?.length > 0 ? (
+                  <div className="container">
+                    {movies.map((movie) => (
+                      <MovieCard key={movie.imdbID} movie={movie} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="empty">
+                    <h2>No movies found</h2>
+                  </div>
+                )}
+              </>
+            }
+          />
+          {/* Movie Details Route */}
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
       </div>
-      {
-        movies?.length > 0
-          ? (
-            <div className='container'>
-              {movies.map((movie) => (<MovieCard movie={movie} />))}
-            </div>
-          ) : (
-            <div className='empty'>
-              <h2>NO MOVIES FOUND  </h2>
-            </div>
-          )
-      }
-
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;
