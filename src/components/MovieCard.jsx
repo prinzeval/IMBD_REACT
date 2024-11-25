@@ -25,13 +25,11 @@
 // };
 
 // export default MovieCard;
-
-
 import React from "react";
 
 const MovieCard = ({ movie }) => {
   const { id, release_date, poster_path, title, name, media_type } = movie;
-  const displayTitle = title || name; // Handle cases where `name` is used instead of `title`
+  const displayTitle = title || name;
 
   return (
     <div className="movie" key={id}>
