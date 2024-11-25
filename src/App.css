@@ -231,3 +231,60 @@ p {
     font-size: 0.9rem;
   }
 }
+
+
+
+.movie-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+  background-color: #141414; /* Netflix black background */
+  min-height: 100vh;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+}
+
+.movie-poster {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.movie-info {
+  flex: 1;
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+}
+
+.movie-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.movie-info p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.movie-info strong {
+  color: #e50914; /* Netflix red */
+}

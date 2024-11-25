@@ -25,34 +25,36 @@
 // };
 
 // export default MovieCard;
+
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const { id, release_date, poster_path, title, name, media_type } = movie;
   const displayTitle = title || name;
 
   return (
-    <div className="movie" key={id}>
-      <div>
-        <p>{release_date}</p>
+    <Link to={`/movie/${id}`} className="movie-link">
+      <div className="movie" key={id}>
+        <div>
+          <p>{release_date}</p>
+        </div>
+        <div>
+          <img
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                : "https://via.placeholder.com/400"
+            }
+            alt={displayTitle}
+          />
+        </div>
+        <div>
+          <h3>{displayTitle}</h3>
+          <p>Type: {media_type}</p>
+        </div>
       </div>
-
-      <div>
-        <img
-          src={
-            poster_path
-              ? `https://image.tmdb.org/t/p/w500${poster_path}`
-              : "https://via.placeholder.com/400"
-          }
-          alt={displayTitle}
-        />
-      </div>
-
-      <div>
-        <h3>{displayTitle}</h3>
-        <p>Type: {media_type}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
