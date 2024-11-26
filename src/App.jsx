@@ -114,25 +114,26 @@
 
 // export default App;
 
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Search from "./containers/Search";
 import MovieDetails from "./containers/MovieDetails";
 import "./App.css";
+
 const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Both "/" and "/search" point to the Search component */}
         <Route path="/" element={<Search />} />
         <Route path="/search" element={<Search />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/tv/:id" element={<MovieDetails />} /> {/* Add route for TV shows */}
       </Routes>
     </Router>
   );
 };
 
 export default App;
+
 
 

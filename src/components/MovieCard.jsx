@@ -26,6 +26,8 @@
 
 // export default MovieCard;
 
+
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -33,8 +35,11 @@ const MovieCard = ({ movie }) => {
   const { id, release_date, poster_path, title, name, media_type } = movie;
   const displayTitle = title || name;
 
+  // Determine the route based on media_type
+  const routePath = media_type === "tv" ? `/tv/${id}` : `/movie/${id}`;
+
   return (
-    <Link to={`/movie/${id}`} className="movie-link">
+    <Link to={routePath} className="movie-link">
       <div className="movie" key={id}>
         <div>
           <p>{release_date}</p>
