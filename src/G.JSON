@@ -2,453 +2,422 @@
     "page": 1,
     "results": [
       {
-        "backdrop_path": "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
-        "id": 94605,
-        "name": "Arcane",
-        "original_name": "Arcane",
-        "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.",
-        "poster_path": "/abf8tHznhSvl9BAElD2cQeRr7do.jpg",
-        "media_type": "tv",
         "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          16,
-          10765,
-          10759,
-          9648
-        ],
-        "popularity": 1616.747,
-        "first_air_date": "2021-11-06",
-        "vote_average": 8.772,
-        "vote_count": 4366,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/9sth10BJPLMG9FaGFDTgaVLr301.jpg",
-        "id": 201646,
-        "name": "Get Millie Black",
-        "original_name": "Get Millie Black",
-        "overview": "Ex Scotland Yard detective Millie-Jean Black returns to Kingston to work missing persons; soon finding herself on a quest to save a sister who won’t be saved, to find a boy who can’t be found, to solve a case that will blow her world apart and prove almost as tough to crack as Millie Black.",
-        "poster_path": "/ytXuD2ZP9Q82OzalMaGYoKUUPCG.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          80,
-          18
-        ],
-        "popularity": 45.164,
-        "first_air_date": "2024-11-25",
-        "vote_average": 10,
-        "vote_count": 1,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
         "backdrop_path": "/q3UGWifvIpdey1T2efX4dSmbZpU.jpg",
-        "id": 124364,
-        "name": "FROM",
-        "original_name": "FROM",
-        "overview": "Unravel the mystery of a nightmarish town in middle America that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest – including the terrifying creatures that come out when the sun goes down.",
-        "poster_path": "/cjXLrg4R7FRPFafvuQ3SSznQOd9.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
         "genre_ids": [
           9648,
           18,
           10765
         ],
-        "popularity": 2644.592,
-        "first_air_date": "2022-02-20",
-        "vote_average": 8.2,
-        "vote_count": 1501,
+        "id": 124364,
         "origin_country": [
           "US"
-        ]
-      },
-      {
-        "backdrop_path": "/lBoHzOgft2QfpjkVVvZCqeM4ttT.jpg",
-        "id": 90228,
-        "name": "Dune: Prophecy",
-        "original_name": "Dune: Prophecy",
-        "overview": "Ten thousand years before the ascension of Paul Atreides, sisters Valya and Tula Harkonnen establish the fabled sect and female order that would become known as the Bene Gesserit to control the future of humankind.",
-        "poster_path": "/5B8Cxz8ZZXp3w2WmmdKTXpkS24e.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          10765,
-          18,
-          10759
         ],
-        "popularity": 1242.815,
-        "first_air_date": "2024-11-17",
+        "original_language": "en",
+        "original_name": "FROM",
+        "overview": "Unravel the mystery of a nightmarish town in middle America that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest – including the terrifying creatures that come out when the sun goes down.",
+        "popularity": 2644.592,
+        "poster_path": "/cjXLrg4R7FRPFafvuQ3SSznQOd9.jpg",
+        "first_air_date": "2022-02-20",
+        "name": "FROM",
         "vote_average": 8.2,
-        "vote_count": 70,
-        "origin_country": [
-          "US"
-        ]
+        "vote_count": 1499
       },
       {
-        "backdrop_path": "/jbTqU6BJMufoMnPSlO4ThrcXs3Y.jpg",
-        "id": 1434,
-        "name": "Family Guy",
-        "original_name": "Family Guy",
-        "overview": "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
-        "poster_path": "/y0HUz4eUNUe3TeEd8fQWYazPaC7.jpg",
-        "media_type": "tv",
         "adult": false,
-        "original_language": "en",
+        "backdrop_path": "/jWXrQstj7p3Wl5MfYWY6IHqRpDb.jpg",
         "genre_ids": [
-          16,
+          10763
+        ],
+        "id": 94722,
+        "origin_country": [
+          "DE"
+        ],
+        "original_language": "de",
+        "original_name": "Tagesschau",
+        "overview": "German daily news program, the oldest still existing program on German television.",
+        "popularity": 2540.615,
+        "poster_path": "/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg",
+        "first_air_date": "1952-12-26",
+        "name": "Tagesschau",
+        "vote_average": 6.648,
+        "vote_count": 216
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/vgeDRVpSUa4Hvovg4C6dgm4dfUW.jpg",
+        "genre_ids": [
+          10766,
+          18
+        ],
+        "id": 112470,
+        "origin_country": [
+          "FR"
+        ],
+        "original_language": "fr",
+        "original_name": "Ici tout commence",
+        "overview": "This television drama series is centered around the prestigious culinary school of renowned chef Auguste Armand. The show follows the lives of students and staff as they navigate the challenges and pressures of the culinary world—delving into their personal and professional lives, revealing secrets, rivalries, and complex relationships.",
+        "popularity": 2387.172,
+        "poster_path": "/yuTHx38jpogXovMhqNatvozigMJ.jpg",
+        "first_air_date": "2020-11-02",
+        "name": "Ici tout commence",
+        "vote_average": 6.77,
+        "vote_count": 63
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/kvQE5pvZZWCIQ0uAQvzRmQO3nZM.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 231344,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "es",
+        "original_name": "Los 50",
+        "overview": "Fifty TV stars are single handedly picked by a mysterious, masked Lion to participate in a competition like no other. Living together in an exotic country mansion and competing against each other in a relentless and unpredictable game, the stars must face challenges posed by the game master while making alliances and developing strategies to avoid elimination.",
+        "popularity": 2381.934,
+        "poster_path": "/5u4lYLk0kDf6XTUIENhXkaUV2jQ.jpg",
+        "first_air_date": "2023-07-18",
+        "name": "Los 50",
+        "vote_average": 7.455,
+        "vote_count": 22
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/j5CR0gFPjwgmAXkV9HGaF4VMjIW.jpg",
+        "genre_ids": [
+          10766,
+          18,
           35
         ],
-        "popularity": 767.416,
-        "first_air_date": "1999-01-31",
-        "vote_average": 7.369,
-        "vote_count": 4363,
+        "id": 257064,
         "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/fBClDP2SLBn4NlqYSMkZwky3VEp.jpg",
-        "id": 73982,
-        "name": "Day and Night",
-        "original_name": "白夜追凶",
-        "overview": "Twin brothers Guan Hongfeng and Guan Hongyu find themselves caught up in a brutal massacre that destroyed their family. As they face off against a shadowy criminal organization, they join forces with others to uncover the truth behind the 213 massacre.",
-        "poster_path": "/wVcpid3NW6UWPFeRhmO9PproG9Y.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "zh",
-        "genre_ids": [
-          80,
-          18,
-          9648
+          "BR"
         ],
-        "popularity": 176.348,
-        "first_air_date": "2017-08-30",
-        "vote_average": 8.282,
-        "vote_count": 39,
-        "origin_country": [
-          "CN"
-        ]
+        "original_language": "pt",
+        "original_name": "Volta por Cima",
+        "overview": "",
+        "popularity": 2327.73,
+        "poster_path": "/nyN8R0P1Hqwq7ksJz4O2BIAUd4W.jpg",
+        "first_air_date": "2024-09-30",
+        "name": "Volta por Cima",
+        "vote_average": 5,
+        "vote_count": 5
       },
       {
-        "backdrop_path": "/enVrO8TRkdT8dmYXTfI4sEjR5Kp.jpg",
-        "id": 222766,
-        "name": "The Day of the Jackal",
-        "original_name": "The Day of the Jackal",
-        "overview": "An unrivalled and highly elusive lone assassin, the Jackal, makes his living carrying out hits for the highest fee. But following his latest kill, he meets his match in a tenacious British intelligence officer who starts to track down the Jackal in a thrilling cat-and-mouse chase across Europe, leaving destruction in its wake.",
-        "poster_path": "/4hSnGq014MGdxCOMWBwyvKoDjrF.jpg",
-        "media_type": "tv",
         "adult": false,
-        "original_language": "en",
+        "backdrop_path": "/tPLUHT2cQYJi66aSZZ1qrcu74Zq.jpg",
         "genre_ids": [
-          18,
-          10759,
-          9648
-        ],
-        "popularity": 851.709,
-        "first_air_date": "2024-11-07",
-        "vote_average": 7.9,
-        "vote_count": 66,
-        "origin_country": [
-          "GB"
-        ]
-      },
-      {
-        "backdrop_path": "/r0Zg70jpcDAD7IMDhVqajSnG9vb.jpg",
-        "id": 113962,
-        "name": "Lioness",
-        "original_name": "Lioness",
-        "overview": "Cruz Manuelos, a rough-around-the-edges but passionate young Marine, is recruited to join the CIA's Lioness Engagement Team to help bring down a terrorist organization from within. Joe, the station chief of the Lioness program, is tasked with training, managing and leading her female undercover operatives.",
-        "poster_path": "/ajaXSmdAlYYhnvx1EIsvpfN949y.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          18,
-          10768
-        ],
-        "popularity": 803.563,
-        "first_air_date": "2023-07-23",
-        "vote_average": 8,
-        "vote_count": 739,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/zZb0IcTE5YylyBAJFAuFAUyfOI3.jpg",
-        "id": 244207,
-        "name": "The Helicopter Heist",
-        "original_name": "Helikopterrånet",
-        "overview": "Two childhood friends decide to try one last heist — to rob millions from Sweden's safest cash depot. But the police are already on their heels.",
-        "poster_path": "/fKZyNZJCIrAll8thK4QyNVkRHy5.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "sv",
-        "genre_ids": [
-          80,
+          10766,
           18
         ],
-        "popularity": 132.698,
-        "first_air_date": "2024-11-22",
-        "vote_average": 7,
-        "vote_count": 12,
+        "id": 257048,
         "origin_country": [
-          "SE"
-        ]
-      },
-      {
-        "backdrop_path": "/f7NLdmGaVrKXQklecTWAvmKMzKo.jpg",
-        "id": 95484,
-        "name": "Stove League",
-        "original_name": "스토브리그",
-        "overview": "Se Young is the youngest head of the management team of Dreams, a cellar-dwelling baseball team. She's highly recognized for her perseverance and intense passion for the team. One day, Seung Su is appointed as a general manager. Although he's been working in the sports field, the teams he led to the championship were unpopular, and some of them were even disbanded after winning the league due to the financial difficulties of their parent companies. Would this unlucky new general manager be able to steer Dreams to the championship with passionate Se Young?",
-        "poster_path": "/6C69xR1hMM66pZmlEAKeIDXpssh.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "ko",
-        "genre_ids": [
-          18
+          "BR"
         ],
-        "popularity": 21.189,
-        "first_air_date": "2019-12-13",
-        "vote_average": 8.3,
-        "vote_count": 43,
-        "origin_country": [
-          "KR"
-        ]
+        "original_language": "pt",
+        "original_name": "Garota do Momento",
+        "overview": "",
+        "popularity": 2299.382,
+        "poster_path": "/jFSkjQSZ5Td52igalpoTQRuHtk.jpg",
+        "first_air_date": "2024-11-04",
+        "name": "Garota do Momento",
+        "vote_average": 10,
+        "vote_count": 1
       },
       {
-        "backdrop_path": "/6EObfIe4akZGvCLXwXLJw3kPitQ.jpg",
-        "id": 245312,
-        "name": "A Man on the Inside",
-        "original_name": "A Man on the Inside",
-        "overview": "A retired professor gets a new lease on life when a private investigator hires him to go undercover inside a San Francisco retirement home.",
-        "poster_path": "/3yYX4MBbmWFYCBF2j00FKqzLAQs.jpg",
-        "media_type": "tv",
         "adult": false,
+        "backdrop_path": "/zUBbIcKnzw5MZqfc6Q8rlRdC6zX.jpg",
+        "genre_ids": [
+          10762,
+          10751
+        ],
+        "id": 38715,
+        "origin_country": [
+          "NL"
+        ],
+        "original_language": "nl",
+        "original_name": "Sinterklaasjournaal",
+        "overview": "",
+        "popularity": 2292.45,
+        "poster_path": "/thOkUNMen2b4KJKeH2k02jNCcI2.jpg",
+        "first_air_date": "2001-01-01",
+        "name": "Sinterklaasjournaal",
+        "vote_average": 7.667,
+        "vote_count": 3
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/9zIqN0oMmaeFvBlccgw80sWed7I.jpg",
+        "genre_ids": [
+          10763,
+          35
+        ],
+        "id": 13008,
+        "origin_country": [
+          "US"
+        ],
         "original_language": "en",
+        "original_name": "TMZ",
+        "overview": "Based on the popular gossip website, this entertainment newsmagazine delivers daily updates on Hollywood's rich, beautiful and screwed-up. The program often shows highlights of the day's staff meeting during which reporters pitch ideas for stories to air that day.",
+        "popularity": 2274.71,
+        "poster_path": "/ifFpUG51DJaQxwnZ35VwoGRFGGv.jpg",
+        "first_air_date": "2007-09-10",
+        "name": "TMZ",
+        "vote_average": 3.2,
+        "vote_count": 9
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/skiuEBlxEC8qCk6nLR6fJvSM1JT.jpg",
         "genre_ids": [
           35,
-          80
-        ],
-        "popularity": 364.265,
-        "first_air_date": "2024-11-21",
-        "vote_average": 7.4,
-        "vote_count": 20,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/2rmK7mnchw9Xr3XdiTFSxTTLXqv.jpg",
-        "id": 37854,
-        "name": "One Piece",
-        "original_name": "ワンピース",
-        "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \"Devil Fruit,\" decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he's surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
-        "poster_path": "/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "ja",
-        "genre_ids": [
-          10759,
-          35,
-          16
-        ],
-        "popularity": 136.272,
-        "first_air_date": "1999-10-20",
-        "vote_average": 8.72,
-        "vote_count": 4715,
-        "origin_country": [
-          "JP"
-        ]
-      },
-      {
-        "backdrop_path": "/n5FPNMJ0eRoiQrKGfUQQRAZeaxg.jpg",
-        "id": 125988,
-        "name": "Silo",
-        "original_name": "Silo",
-        "overview": "In a ruined and toxic future, thousands live in a giant silo deep underground. After its sheriff breaks a cardinal rule and residents die mysteriously, engineer Juliette starts to uncover shocking secrets and the truth about the silo.",
-        "poster_path": "/tlliQuCupf8fpTH7RAor3aKMGy.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          10765,
-          18
-        ],
-        "popularity": 1804.139,
-        "first_air_date": "2023-05-04",
-        "vote_average": 8.2,
-        "vote_count": 1047,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/2Erj4Oav9EHAtqLI354VM7ULDqu.jpg",
-        "id": 73586,
-        "name": "Yellowstone",
-        "original_name": "Yellowstone",
-        "overview": "Follow the violent world of the Dutton family, who controls the largest contiguous ranch in the United States. Led by their patriarch John Dutton, the family defends their property against constant attack by land developers, an Indian reservation, and America’s first National Park.",
-        "poster_path": "/s4QRRYc1V2e68Qy9Wel9MI8fhRP.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          37,
-          18
-        ],
-        "popularity": 1778.763,
-        "first_air_date": "2018-06-20",
-        "vote_average": 8.22,
-        "vote_count": 2387,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/2vtI9xzD6qpDzY9m8kV67QY0qfM.jpg",
-        "id": 253905,
-        "name": "When the Phone Rings",
-        "original_name": "지금 거신 전화는",
-        "overview": "A rising politician and his mute wife's tense marriage begins to unravel after a call from a kidnapper turns their lives upside down.",
-        "poster_path": "/ec5MiNxeWvtocDXuxt4t2uXm9vJ.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "ko",
-        "genre_ids": [
           18,
-          9648
-        ],
-        "popularity": 184.582,
-        "first_air_date": "2024-11-22",
-        "vote_average": 7.3,
-        "vote_count": 3,
-        "origin_country": [
-          "KR"
-        ]
-      },
-      {
-        "backdrop_path": "/mh2UczqEXJJVgqohbyZbHTuxwhL.jpg",
-        "id": 157741,
-        "name": "Landman",
-        "original_name": "Landman",
-        "overview": "Set in the proverbial boomtowns of West-Texas and a modern-day tale of fortune-seeking in the world of oil rigs, the series is an upstairs/downstairs story of roughnecks and wildcat billionaires that are fueling a boom so big it’s reshaping our climate, our economy and our geopolitics.",
-        "poster_path": "/rxWtATtTdwx0ERQjQ7BtVOMyq5r.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          18
-        ],
-        "popularity": 416.448,
-        "first_air_date": "2024-11-17",
-        "vote_average": 8.1,
-        "vote_count": 23,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/pPKiIJEEcV0E1hpVcWRXyp73ZpX.jpg",
-        "id": 95057,
-        "name": "Superman & Lois",
-        "original_name": "Superman & Lois",
-        "overview": "After years of facing megalomaniacal supervillains, monsters wreaking havoc on Metropolis, and alien invaders intent on wiping out the human race, The Man of Steel aka Clark Kent and Lois Lane come face to face with one of their greatest challenges ever: dealing with all the stress, pressures and complexities that come with being working parents in today's society.",
-        "poster_path": "/hoWkpACsrLgv4QMT4XCDrzoPdWN.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          18,
-          10765
-        ],
-        "popularity": 568.921,
-        "first_air_date": "2021-02-23",
-        "vote_average": 8.1,
-        "vote_count": 2407,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/v1hqncj250WcVeVs5RXzQ3ekwMA.jpg",
-        "id": 213306,
-        "name": "Cross",
-        "original_name": "Cross",
-        "overview": "Alex Cross is a brilliant but flawed homicide detective and full of contradictions. A doting father and family man, Cross is single-minded to the point of obsession when he hunts killers. He is desperate for love, but his wife’s murder has left him too damaged to receive it.",
-        "poster_path": "/oArnlWvky2KtWoGC0ChaDboEvcH.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          80,
-          18,
-          9648
-        ],
-        "popularity": 440.496,
-        "first_air_date": "2024-11-14",
-        "vote_average": 7.3,
-        "vote_count": 77,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/gc8PfyTqzqltKPW3X0cIVUGmagz.jpg",
-        "id": 1396,
-        "name": "Breaking Bad",
-        "original_name": "Breaking Bad",
-        "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.",
-        "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          18,
-          80
-        ],
-        "popularity": 549.039,
-        "first_air_date": "2008-01-20",
-        "vote_average": 8.917,
-        "vote_count": 14532,
-        "origin_country": [
-          "US"
-        ]
-      },
-      {
-        "backdrop_path": "/zZqpAXxVSBtxV9qPBcscfXBcL2w.jpg",
-        "id": 1399,
-        "name": "Game of Thrones",
-        "original_name": "Game of Thrones",
-        "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
-        "poster_path": "/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
-        "media_type": "tv",
-        "adult": false,
-        "original_language": "en",
-        "genre_ids": [
-          10765,
-          18,
+          10751,
+          10762,
           10759
         ],
-        "popularity": 654.525,
-        "first_air_date": "2011-04-17",
-        "vote_average": 8.456,
-        "vote_count": 24153,
+        "id": 247885,
+        "origin_country": [
+          "MX",
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Papás por Conveniencia",
+        "overview": "Tino, a single father who faces great challenges in raising his two children, finds out one day that he is also the father of two rebellious teenagers, children of Aidé, a former high school classmate who has become an important businesswoman. For Tino, this news becomes an opportunity to take on the role of father of the children he never knew he had. Thus, he begins to work at Aidé's company, but everything gets complicated when Tino and his family move into Aidé's house to integrate into her new life. The house becomes a battlefield, both of their children have problems adapting, and love resurfaces between Tino and Aidé and a torrid romance begins. But building this new life for Aidé, Tino and their children will not be easy; they will have to face serious obstacles, always supported by the strength of their love and that of their children.",
+        "popularity": 2237.967,
+        "poster_path": "/y7yIu9PKx2WTphhYgbBq9C1RNzV.jpg",
+        "first_air_date": "2024-10-21",
+        "name": "Papás por Conveniencia",
+        "vote_average": 8.143,
+        "vote_count": 14
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/9Gj33rlZRbBkuPUTrjPJbmtlEBa.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 108466,
+        "origin_country": [
+          "NO"
+        ],
+        "original_language": "no",
+        "original_name": "Alle mot alle",
+        "overview": "",
+        "popularity": 2237.836,
+        "poster_path": "/qmOYqF2ezHT1leCE91Mdm6tu3Vl.jpg",
+        "first_air_date": "2020-08-31",
+        "name": "Alle mot alle",
+        "vote_average": 8,
+        "vote_count": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/4i3iJepkqqH5JJgTNLJdi8ke6ir.jpg",
+        "genre_ids": [
+          10766
+        ],
+        "id": 249010,
+        "origin_country": [
+          "ZA"
+        ],
+        "original_language": "af",
+        "original_name": "Kelders van Geheime",
+        "overview": "Kelders van Geheime (Cellars of Secrets) is a South African, Afrikaans-language telenovela based on the wheeling's and dealings of the community that lives on Soebatskloof (a wine farm in the Cape). The series focuses on three families: the Abrahams, Syster and Marais households. These families will have to stand together, agree (or agree to disagree), and work together to earn their bread and butter – and a glass of wine.",
+        "popularity": 2148.993,
+        "poster_path": "/vf1I0G5jICTstI1EXxb9Oqq80TU.jpg",
+        "first_air_date": "2024-05-06",
+        "name": "Kelders van Geheime",
+        "vote_average": 6.375,
+        "vote_count": 8
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/mLcD1v4sfoa1juOsBat7Vik7wEe.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 248890,
+        "origin_country": [
+          "ZA"
+        ],
+        "original_language": "en",
+        "original_name": "Ready Steady Cook South Africa",
+        "overview": "In Ready Steady Cook, two teams - a Red Tomato and a Green Pepper - compete in a Red Kitchen and a Green Kitchen, together with a South African chef on each side and paired with enthusiastic home cooks, as they are challenged creatively with a mystery bag of ingredients in a 20-minute cook-off.",
+        "popularity": 2126.16,
+        "poster_path": "/30xX4IMbgnMbQwo76xM4BOSokZO.jpg",
+        "first_air_date": "2024-03-18",
+        "name": "Ready Steady Cook South Africa",
+        "vote_average": 2.1,
+        "vote_count": 4
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/7ZBNbpkLhC2fS90j6onLS8qqfRX.jpg",
+        "genre_ids": [],
+        "id": 4682,
+        "origin_country": [
+          "GB"
+        ],
+        "original_language": "en",
+        "original_name": "Strictly Come Dancing: It Takes Two",
+        "overview": "The companion show to the popular BBC One programme Strictly Come Dancing which features interviews and training footage of the couples competing in the main Saturday night show, opinions from the judges on the previous Saturday show and the training footage for the next, and interviews with celebrities who have been watching the show.",
+        "popularity": 2077.67,
+        "poster_path": "/1UOKLsJ3bopZHg6ntRfmO4C5Gcm.jpg",
+        "first_air_date": "2004-10-25",
+        "name": "Strictly Come Dancing: It Takes Two",
+        "vote_average": 3.8,
+        "vote_count": 5
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/sCTlziZeyf4eWXh09pt63zMtJRw.jpg",
+        "genre_ids": [
+          10759,
+          18
+        ],
+        "id": 261033,
+        "origin_country": [
+          "SY"
+        ],
+        "original_language": "ar",
+        "original_name": "العميل",
+        "overview": "A police captain infiltrates a notorious gang, only to find himself going deeper down the rabbit hole.",
+        "popularity": 2051.345,
+        "poster_path": "/qUtgaa43jTELs0Tdw55aIukt9yn.jpg",
+        "first_air_date": "2024-08-18",
+        "name": "The Agent",
+        "vote_average": 2.5,
+        "vote_count": 3
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/xeJJZE8yC09lRbiV2f2hqURJmhd.jpg",
+        "genre_ids": [
+          10766,
+          18,
+          9648
+        ],
+        "id": 237478,
+        "origin_country": [
+          "BR"
+        ],
+        "original_language": "pt",
+        "original_name": "Mania de Você",
+        "overview": "The story begins with the ambiguous relationship between friends Viola and Luma, who seem predestined to literally enter each other's lives. Born on the same day, in very different situations, they meet years later, united by coincidences that go beyond their birthday. From humble origins, Viola moves with her boyfriend Mavi to Angra dos Reis, where Luma lives a luxurious life and dates Rudá, who ends up meeting Viola by chance. Thus begins the duo's journey, which goes from a passion for recipes to an obsession with the same man, from the immediate connection to the point of starting to live their friend’s reality, 10 years later. A journey divided between complicity and rivalry, which includes them in a love quadrangle and is impacted by a series of circumstances, twists and surprises, such as the secret surrounding a murder.",
+        "popularity": 2032.956,
+        "poster_path": "/xq1X6H8pupwx0jeZpu4Piq0V5uL.jpg",
+        "first_air_date": "2024-09-09",
+        "name": "Crazy About You",
+        "vote_average": 5.5,
+        "vote_count": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/ookJ1LS8Uc0ji7cSDuJfV7Qh6Lb.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 18770,
+        "origin_country": [
+          "ES"
+        ],
+        "original_language": "es",
+        "original_name": "Gran Hermano",
+        "overview": "Gran Hermano is a reality television series broadcast in Spain on Telecinco and La Siete produced by Endemol. It is part of the Big Brother franchise first developed in the Netherlands. As of February 2012, 19 editions of the show have aired.",
+        "popularity": 2032.79,
+        "poster_path": "/gQ0Emh2LT047Fip2HWye3NkrkQB.jpg",
+        "first_air_date": "2000-04-23",
+        "name": "Gran Hermano",
+        "vote_average": 4.773,
+        "vote_count": 11
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
+        "genre_ids": [
+          16,
+          10765,
+          10759,
+          9648
+        ],
+        "id": 94605,
         "origin_country": [
           "US"
-        ]
+        ],
+        "original_language": "en",
+        "original_name": "Arcane",
+        "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.",
+        "popularity": 1964.981,
+        "poster_path": "/abf8tHznhSvl9BAElD2cQeRr7do.jpg",
+        "first_air_date": "2021-11-06",
+        "name": "Arcane",
+        "vote_average": 8.8,
+        "vote_count": 4360
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/4ErOWmDGyGk0qCK1J8blAoj1a7a.jpg",
+        "genre_ids": [
+          18
+        ],
+        "id": 252373,
+        "origin_country": [
+          "PT"
+        ],
+        "original_language": "pt",
+        "original_name": "A Promessa",
+        "overview": "",
+        "popularity": 1894.291,
+        "poster_path": "/uptgxt2apx5wwWItQzqL0HwhjZC.jpg",
+        "first_air_date": "2024-06-18",
+        "name": "A Promessa",
+        "vote_average": 5.4,
+        "vote_count": 5
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          18,
+          35
+        ],
+        "id": 36361,
+        "origin_country": [
+          "CZ"
+        ],
+        "original_language": "cs",
+        "original_name": "Ulice",
+        "overview": "Ulice is a Czech soap opera produced and broadcast by Nova. In the Czech language Ulice means street.\n\nThe show describes the lives of the Farský, Jordán, Boháč, Nikl, and Liška families and many other people that live in Prague. Their daily battle against real problems of living in a modern world like divorce, love, betrayal and illness or disease. Ulice often shows crime.",
+        "popularity": 1861.976,
+        "poster_path": "/gFEHva8Csx18hMGJJZ6gi4sFSKR.jpg",
+        "first_air_date": "2005-09-05",
+        "name": "Ulice",
+        "vote_average": 3.727,
+        "vote_count": 22
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [],
+        "id": 274136,
+        "origin_country": [
+          "CZ"
+        ],
+        "original_language": "cs",
+        "original_name": "Stardance XIII ...kolem dokola",
+        "overview": "",
+        "popularity": 1826.506,
+        "poster_path": "/iJPk8DSr2NVpfeFxembWxROqQNW.jpg",
+        "first_air_date": "2024-10-14",
+        "name": "Stardance XIII ...kolem dokola",
+        "vote_average": 8,
+        "vote_count": 2
       }
     ],
-    "total_pages": 500,
-    "total_results": 10000
+    "total_pages": 9324,
+    "total_results": 186475
   }

@@ -392,3 +392,29 @@ button:disabled {
 .container .movie {
   flex: 0 0 auto;
 }
+
+.movie-card {
+  background-color: #222;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 15px;
+  margin: 0 10px;
+  text-align: center;
+  color: white;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-card h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.movie-card p {
+  font-size: 14px;
+  margin-top: 10px;
+}
