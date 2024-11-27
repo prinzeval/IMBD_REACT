@@ -2,422 +2,456 @@
     "page": 1,
     "results": [
       {
+        "backdrop_path": "/NNC08YmJFFlLi1prBkK8quk3dp.jpg",
+        "id": 84773,
+        "name": "The Lord of the Rings: The Rings of Power",
+        "original_name": "The Lord of the Rings: The Rings of Power",
+        "overview": "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone.",
+        "poster_path": "/mYLOqiStMxDK3fYZFirgrMt8z5d.jpg",
+        "media_type": "tv",
         "adult": false,
-        "backdrop_path": "/q3UGWifvIpdey1T2efX4dSmbZpU.jpg",
+        "original_language": "en",
         "genre_ids": [
-          9648,
+          10759,
+          10765,
+          18
+        ],
+        "popularity": 425.302,
+        "first_air_date": "2022-09-01",
+        "vote_average": 7.344,
+        "vote_count": 3054,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/ajztm40qDPqMONaSJhQ2PaNe2Xd.jpg",
+        "id": 83867,
+        "name": "Star Wars: Andor",
+        "original_name": "Star Wars: Andor",
+        "overview": "In an era filled with danger, deception and intrigue, Cassian Andor will discover the difference he can make in the struggle against the tyrannical Galactic Empire. He embarks on a path that is destined to turn him into a rebel hero.",
+        "poster_path": "/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          10765,
+          10759,
+          18
+        ],
+        "popularity": 64.401,
+        "first_air_date": "2022-09-21",
+        "vote_average": 8.224,
+        "vote_count": 1220,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/zZqpAXxVSBtxV9qPBcscfXBcL2w.jpg",
+        "id": 1399,
+        "name": "Game of Thrones",
+        "original_name": "Game of Thrones",
+        "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+        "poster_path": "/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          10765,
           18,
+          10759
+        ],
+        "popularity": 665.188,
+        "first_air_date": "2011-04-17",
+        "vote_average": 8.456,
+        "vote_count": 24152,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/eljErfkQUcFUgQkI4I1soZcH8MW.jpg",
+        "id": 92783,
+        "name": "She-Hulk: Attorney at Law",
+        "original_name": "She-Hulk: Attorney at Law",
+        "overview": "Jennifer Walters navigates the complicated life of a single, 30-something attorney who also happens to be a green 6-foot-7-inch superpowered hulk.",
+        "poster_path": "/hJfI6AGrmr4uSHRccfJuSsapvOb.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          35,
           10765
         ],
-        "id": 124364,
+        "popularity": 54.822,
+        "first_air_date": "2022-08-18",
+        "vote_average": 6.228,
+        "vote_count": 2145,
         "origin_country": [
           "US"
-        ],
+        ]
+      },
+      {
+        "backdrop_path": "/14JqSslr0eGIhccIC25UArOIELy.jpg",
+        "id": 90802,
+        "name": "The Sandman",
+        "original_name": "The Sandman",
+        "overview": "After years of imprisonment, Morpheus — the King of Dreams — embarks on a journey across worlds to find what was stolen from him and restore his power.",
+        "poster_path": "/q54qEgagGOYCq5D1903eBVMNkbo.jpg",
+        "media_type": "tv",
+        "adult": false,
         "original_language": "en",
-        "original_name": "FROM",
-        "overview": "Unravel the mystery of a nightmarish town in middle America that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest – including the terrifying creatures that come out when the sun goes down.",
-        "popularity": 2644.592,
-        "poster_path": "/cjXLrg4R7FRPFafvuQ3SSznQOd9.jpg",
-        "first_air_date": "2022-02-20",
-        "name": "FROM",
-        "vote_average": 8.2,
-        "vote_count": 1499
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/jWXrQstj7p3Wl5MfYWY6IHqRpDb.jpg",
         "genre_ids": [
-          10763
+          10765,
+          18,
+          10759
         ],
-        "id": 94722,
+        "popularity": 56.78,
+        "first_air_date": "2022-08-05",
+        "vote_average": 7.978,
+        "vote_count": 2038,
         "origin_country": [
-          "DE"
-        ],
-        "original_language": "de",
-        "original_name": "Tagesschau",
-        "overview": "German daily news program, the oldest still existing program on German television.",
-        "popularity": 2540.615,
-        "poster_path": "/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg",
-        "first_air_date": "1952-12-26",
-        "name": "Tagesschau",
-        "vote_average": 6.648,
-        "vote_count": 216
+          "US"
+        ]
       },
       {
+        "backdrop_path": "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg",
+        "id": 100088,
+        "name": "The Last of Us",
+        "original_name": "The Last of Us",
+        "overview": "Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival.",
+        "poster_path": "/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+        "media_type": "tv",
         "adult": false,
-        "backdrop_path": "/vgeDRVpSUa4Hvovg4C6dgm4dfUW.jpg",
+        "original_language": "en",
         "genre_ids": [
-          10766,
           18
         ],
-        "id": 112470,
-        "origin_country": [
-          "FR"
-        ],
-        "original_language": "fr",
-        "original_name": "Ici tout commence",
-        "overview": "This television drama series is centered around the prestigious culinary school of renowned chef Auguste Armand. The show follows the lives of students and staff as they navigate the challenges and pressures of the culinary world—delving into their personal and professional lives, revealing secrets, rivalries, and complex relationships.",
-        "popularity": 2387.172,
-        "poster_path": "/yuTHx38jpogXovMhqNatvozigMJ.jpg",
-        "first_air_date": "2020-11-02",
-        "name": "Ici tout commence",
-        "vote_average": 6.77,
-        "vote_count": 63
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/kvQE5pvZZWCIQ0uAQvzRmQO3nZM.jpg",
-        "genre_ids": [
-          10764
-        ],
-        "id": 231344,
+        "popularity": 245.262,
+        "first_air_date": "2023-01-15",
+        "vote_average": 8.596,
+        "vote_count": 5140,
         "origin_country": [
           "US"
-        ],
-        "original_language": "es",
-        "original_name": "Los 50",
-        "overview": "Fifty TV stars are single handedly picked by a mysterious, masked Lion to participate in a competition like no other. Living together in an exotic country mansion and competing against each other in a relentless and unpredictable game, the stars must face challenges posed by the game master while making alliances and developing strategies to avoid elimination.",
-        "popularity": 2381.934,
-        "poster_path": "/5u4lYLk0kDf6XTUIENhXkaUV2jQ.jpg",
-        "first_air_date": "2023-07-18",
-        "name": "Los 50",
-        "vote_average": 7.455,
-        "vote_count": 22
+        ]
       },
       {
+        "backdrop_path": "/5DUMPBSnHOZsbBv81GFXZXvDpo6.jpg",
+        "id": 114410,
+        "name": "Chainsaw Man",
+        "original_name": "チェンソーマン",
+        "overview": "Denji has a simple dream—to live a happy and peaceful life, spending time with a girl he likes. This is a far cry from reality, however, as Denji is forced by the yakuza into killing devils in order to pay off his crushing debts. Using his pet devil Pochita as a weapon, he is ready to do anything for a bit of cash.",
+        "poster_path": "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg",
+        "media_type": "tv",
         "adult": false,
-        "backdrop_path": "/j5CR0gFPjwgmAXkV9HGaF4VMjIW.jpg",
+        "original_language": "ja",
         "genre_ids": [
-          10766,
+          16,
+          10759,
+          10765
+        ],
+        "popularity": 107.263,
+        "first_air_date": "2022-10-12",
+        "vote_average": 8.548,
+        "vote_count": 1671,
+        "origin_country": [
+          "JP"
+        ]
+      },
+      {
+        "backdrop_path": "/7cqKGQMnNabzOpi7qaIgZvQ7NGV.jpg",
+        "id": 76479,
+        "name": "The Boys",
+        "original_name": "The Boys",
+        "overview": "A group of vigilantes known informally as “The Boys” set out to take down corrupt superheroes with no more than blue-collar grit and a willingness to fight dirty.",
+        "poster_path": "/2zmTngn1tYC1AvfnrFLhxeD82hz.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          10765,
+          10759
+        ],
+        "popularity": 356.615,
+        "first_air_date": "2019-07-25",
+        "vote_average": 8.468,
+        "vote_count": 10539,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/8rK0S1ZWmfF4EqVabdqB9PMIFTS.jpg",
+        "id": 113988,
+        "name": "DAHMER - Monster: The Jeffrey Dahmer Story",
+        "original_name": "DAHMER - Monster: The Jeffrey Dahmer Story",
+        "overview": "This series examines the gruesome and horrific true crimes of Jeffrey Dahmer and the systemic failures that enabled one of America’s most notorious serial killers to continue his murderous spree in plain sight for over a decade.",
+        "poster_path": "/f2PVrphK0u81ES256lw3oAZuF3x.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          80,
+          18
+        ],
+        "popularity": 77.557,
+        "first_air_date": "2022-09-21",
+        "vote_average": 8.002,
+        "vote_count": 2557,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/u5N8tXgGDY6jS7R8Xn42LDeL0Dk.jpg",
+        "id": 80752,
+        "name": "See",
+        "original_name": "See",
+        "overview": "A virus has decimated humankind. Those who survived emerged blind. Centuries later when twins are born with the mythic ability to see, their father must protect his tribe against a threatened queen.",
+        "poster_path": "/lKDIhc9FQibDiBQ57n3ELfZCyZg.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          18,
+          10765,
+          10759
+        ],
+        "popularity": 176.404,
+        "first_air_date": "2019-11-01",
+        "vote_average": 8.122,
+        "vote_count": 2464,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/hIZFG7MK4leU4axRFKJWqrjhmxZ.jpg",
+        "id": 95403,
+        "name": "The Peripheral",
+        "original_name": "The Peripheral",
+        "overview": "Stuck in a small Appalachian town, a young woman’s only escape from the daily grind is playing advanced video games. She is such a good player that a company sends her a new video game system to test…but it has a surprise in store. It unlocks all of her dreams of finding a purpose, romance, and glamour in what seems like a game…but it also puts her and her family in real danger.",
+        "poster_path": "/2e5NNQu9B1fXBNllRj8fzysCguP.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          10765,
+          18
+        ],
+        "popularity": 59.493,
+        "first_air_date": "2022-10-20",
+        "vote_average": 7.81,
+        "vote_count": 1086,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/csnJf7QslLWl2oekdm3mO3INFiq.jpg",
+        "id": 136315,
+        "name": "The Bear",
+        "original_name": "The Bear",
+        "overview": "Carmy, a young fine-dining chef, comes home to Chicago to run his family sandwich shop. As he fights to transform the shop and himself, he works alongside a rough-around-the-edges crew that ultimately reveal themselves as his chosen family.",
+        "poster_path": "/3MVHF64rlvH1eofKefIoazXwOK0.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
           18,
           35
         ],
-        "id": 257064,
-        "origin_country": [
-          "BR"
-        ],
-        "original_language": "pt",
-        "original_name": "Volta por Cima",
-        "overview": "",
-        "popularity": 2327.73,
-        "poster_path": "/nyN8R0P1Hqwq7ksJz4O2BIAUd4W.jpg",
-        "first_air_date": "2024-09-30",
-        "name": "Volta por Cima",
-        "vote_average": 5,
-        "vote_count": 5
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/tPLUHT2cQYJi66aSZZ1qrcu74Zq.jpg",
-        "genre_ids": [
-          10766,
-          18
-        ],
-        "id": 257048,
-        "origin_country": [
-          "BR"
-        ],
-        "original_language": "pt",
-        "original_name": "Garota do Momento",
-        "overview": "",
-        "popularity": 2299.382,
-        "poster_path": "/jFSkjQSZ5Td52igalpoTQRuHtk.jpg",
-        "first_air_date": "2024-11-04",
-        "name": "Garota do Momento",
-        "vote_average": 10,
-        "vote_count": 1
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/zUBbIcKnzw5MZqfc6Q8rlRdC6zX.jpg",
-        "genre_ids": [
-          10762,
-          10751
-        ],
-        "id": 38715,
-        "origin_country": [
-          "NL"
-        ],
-        "original_language": "nl",
-        "original_name": "Sinterklaasjournaal",
-        "overview": "",
-        "popularity": 2292.45,
-        "poster_path": "/thOkUNMen2b4KJKeH2k02jNCcI2.jpg",
-        "first_air_date": "2001-01-01",
-        "name": "Sinterklaasjournaal",
-        "vote_average": 7.667,
-        "vote_count": 3
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/9zIqN0oMmaeFvBlccgw80sWed7I.jpg",
-        "genre_ids": [
-          10763,
-          35
-        ],
-        "id": 13008,
+        "popularity": 113.232,
+        "first_air_date": "2022-06-23",
+        "vote_average": 8.3,
+        "vote_count": 1140,
         "origin_country": [
           "US"
-        ],
-        "original_language": "en",
-        "original_name": "TMZ",
-        "overview": "Based on the popular gossip website, this entertainment newsmagazine delivers daily updates on Hollywood's rich, beautiful and screwed-up. The program often shows highlights of the day's staff meeting during which reporters pitch ideas for stories to air that day.",
-        "popularity": 2274.71,
-        "poster_path": "/ifFpUG51DJaQxwnZ35VwoGRFGGv.jpg",
-        "first_air_date": "2007-09-10",
-        "name": "TMZ",
-        "vote_average": 3.2,
-        "vote_count": 9
+        ]
       },
       {
+        "backdrop_path": "/mNHRGO1gFpR2CYZdANe72kcKq7G.jpg",
+        "id": 153312,
+        "name": "Tulsa King",
+        "original_name": "Tulsa King",
+        "overview": "Just after he is released from prison after 25 years, New York mafia capo Dwight “The General” Manfredi is unceremoniously exiled by his boss to set up shop in Tulsa, Okla. Realizing that his mob family may not have his best interests in mind, Dwight slowly builds a “crew” from a group of unlikely characters, to help him establish a new criminal empire in a place that to him might as well be another planet.",
+        "poster_path": "/zMFAdj30K84Sz90bCd6ePwiAO37.jpg",
+        "media_type": "tv",
         "adult": false,
-        "backdrop_path": "/skiuEBlxEC8qCk6nLR6fJvSM1JT.jpg",
+        "original_language": "en",
+        "genre_ids": [
+          80,
+          18
+        ],
+        "popularity": 806.172,
+        "first_air_date": "2022-11-13",
+        "vote_average": 8.4,
+        "vote_count": 1931,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",
+        "id": 119051,
+        "name": "Wednesday",
+        "original_name": "Wednesday",
+        "overview": "Wednesday Addams is sent to Nevermore Academy, a bizarre boarding school where she attempts to master her psychic powers, stop a monstrous killing spree of the town citizens, and solve the supernatural mystery that affected her family 25 years ago — all while navigating her new relationships.",
+        "poster_path": "/9PFonBhy4cQy7Jz20NpMygczOkv.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+          10765,
+          9648,
+          35
+        ],
+        "popularity": 262.042,
+        "first_air_date": "2022-11-23",
+        "vote_average": 8.454,
+        "vote_count": 8665,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/sO0F9JRq7gTg1V7dZuinZ2jHGy9.jpg",
+        "id": 111803,
+        "name": "The White Lotus",
+        "original_name": "The White Lotus",
+        "overview": "Follow the exploits of various guests and employees at an exclusive tropical resort over the span of a week as with each passing day, a darker complexity emerges in these picture-perfect travelers, the hotel’s cheerful employees and the idyllic locale itself.",
+        "poster_path": "/gH5i3JbnLsyTvcImlofNvXtH3i5.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
         "genre_ids": [
           35,
           18,
-          10751,
-          10762,
-          10759
-        ],
-        "id": 247885,
-        "origin_country": [
-          "MX",
-          "US"
-        ],
-        "original_language": "en",
-        "original_name": "Papás por Conveniencia",
-        "overview": "Tino, a single father who faces great challenges in raising his two children, finds out one day that he is also the father of two rebellious teenagers, children of Aidé, a former high school classmate who has become an important businesswoman. For Tino, this news becomes an opportunity to take on the role of father of the children he never knew he had. Thus, he begins to work at Aidé's company, but everything gets complicated when Tino and his family move into Aidé's house to integrate into her new life. The house becomes a battlefield, both of their children have problems adapting, and love resurfaces between Tino and Aidé and a torrid romance begins. But building this new life for Aidé, Tino and their children will not be easy; they will have to face serious obstacles, always supported by the strength of their love and that of their children.",
-        "popularity": 2237.967,
-        "poster_path": "/y7yIu9PKx2WTphhYgbBq9C1RNzV.jpg",
-        "first_air_date": "2024-10-21",
-        "name": "Papás por Conveniencia",
-        "vote_average": 8.143,
-        "vote_count": 14
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/9Gj33rlZRbBkuPUTrjPJbmtlEBa.jpg",
-        "genre_ids": [
-          10764
-        ],
-        "id": 108466,
-        "origin_country": [
-          "NO"
-        ],
-        "original_language": "no",
-        "original_name": "Alle mot alle",
-        "overview": "",
-        "popularity": 2237.836,
-        "poster_path": "/qmOYqF2ezHT1leCE91Mdm6tu3Vl.jpg",
-        "first_air_date": "2020-08-31",
-        "name": "Alle mot alle",
-        "vote_average": 8,
-        "vote_count": 2
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/4i3iJepkqqH5JJgTNLJdi8ke6ir.jpg",
-        "genre_ids": [
-          10766
-        ],
-        "id": 249010,
-        "origin_country": [
-          "ZA"
-        ],
-        "original_language": "af",
-        "original_name": "Kelders van Geheime",
-        "overview": "Kelders van Geheime (Cellars of Secrets) is a South African, Afrikaans-language telenovela based on the wheeling's and dealings of the community that lives on Soebatskloof (a wine farm in the Cape). The series focuses on three families: the Abrahams, Syster and Marais households. These families will have to stand together, agree (or agree to disagree), and work together to earn their bread and butter – and a glass of wine.",
-        "popularity": 2148.993,
-        "poster_path": "/vf1I0G5jICTstI1EXxb9Oqq80TU.jpg",
-        "first_air_date": "2024-05-06",
-        "name": "Kelders van Geheime",
-        "vote_average": 6.375,
-        "vote_count": 8
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/mLcD1v4sfoa1juOsBat7Vik7wEe.jpg",
-        "genre_ids": [
-          10764
-        ],
-        "id": 248890,
-        "origin_country": [
-          "ZA"
-        ],
-        "original_language": "en",
-        "original_name": "Ready Steady Cook South Africa",
-        "overview": "In Ready Steady Cook, two teams - a Red Tomato and a Green Pepper - compete in a Red Kitchen and a Green Kitchen, together with a South African chef on each side and paired with enthusiastic home cooks, as they are challenged creatively with a mystery bag of ingredients in a 20-minute cook-off.",
-        "popularity": 2126.16,
-        "poster_path": "/30xX4IMbgnMbQwo76xM4BOSokZO.jpg",
-        "first_air_date": "2024-03-18",
-        "name": "Ready Steady Cook South Africa",
-        "vote_average": 2.1,
-        "vote_count": 4
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/7ZBNbpkLhC2fS90j6onLS8qqfRX.jpg",
-        "genre_ids": [],
-        "id": 4682,
-        "origin_country": [
-          "GB"
-        ],
-        "original_language": "en",
-        "original_name": "Strictly Come Dancing: It Takes Two",
-        "overview": "The companion show to the popular BBC One programme Strictly Come Dancing which features interviews and training footage of the couples competing in the main Saturday night show, opinions from the judges on the previous Saturday show and the training footage for the next, and interviews with celebrities who have been watching the show.",
-        "popularity": 2077.67,
-        "poster_path": "/1UOKLsJ3bopZHg6ntRfmO4C5Gcm.jpg",
-        "first_air_date": "2004-10-25",
-        "name": "Strictly Come Dancing: It Takes Two",
-        "vote_average": 3.8,
-        "vote_count": 5
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/sCTlziZeyf4eWXh09pt63zMtJRw.jpg",
-        "genre_ids": [
-          10759,
-          18
-        ],
-        "id": 261033,
-        "origin_country": [
-          "SY"
-        ],
-        "original_language": "ar",
-        "original_name": "العميل",
-        "overview": "A police captain infiltrates a notorious gang, only to find himself going deeper down the rabbit hole.",
-        "popularity": 2051.345,
-        "poster_path": "/qUtgaa43jTELs0Tdw55aIukt9yn.jpg",
-        "first_air_date": "2024-08-18",
-        "name": "The Agent",
-        "vote_average": 2.5,
-        "vote_count": 3
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/xeJJZE8yC09lRbiV2f2hqURJmhd.jpg",
-        "genre_ids": [
-          10766,
-          18,
           9648
         ],
-        "id": 237478,
+        "popularity": 102.751,
+        "first_air_date": "2021-07-11",
+        "vote_average": 7.627,
+        "vote_count": 795,
         "origin_country": [
-          "BR"
-        ],
-        "original_language": "pt",
-        "original_name": "Mania de Você",
-        "overview": "The story begins with the ambiguous relationship between friends Viola and Luma, who seem predestined to literally enter each other's lives. Born on the same day, in very different situations, they meet years later, united by coincidences that go beyond their birthday. From humble origins, Viola moves with her boyfriend Mavi to Angra dos Reis, where Luma lives a luxurious life and dates Rudá, who ends up meeting Viola by chance. Thus begins the duo's journey, which goes from a passion for recipes to an obsession with the same man, from the immediate connection to the point of starting to live their friend’s reality, 10 years later. A journey divided between complicity and rivalry, which includes them in a love quadrangle and is impacted by a series of circumstances, twists and surprises, such as the secret surrounding a murder.",
-        "popularity": 2032.956,
-        "poster_path": "/xq1X6H8pupwx0jeZpu4Piq0V5uL.jpg",
-        "first_air_date": "2024-09-09",
-        "name": "Crazy About You",
-        "vote_average": 5.5,
-        "vote_count": 2
+          "US"
+        ]
       },
       {
+        "backdrop_path": "/vX71TGviqLsOtDNJ9q1QR4m14kH.jpg",
+        "id": 218589,
+        "name": "Those About to Die",
+        "original_name": "Those About to Die",
+        "overview": "Within the spectacular, complex and corrupt world of gladiatorial sports in Ancient Rome, follow an ensemble of diverse characters across the many layers of Roman society where sports, politics and business intersect and collide.",
+        "poster_path": "/gvz0m4MJ8sAj6yMcQdwN07bNjRY.jpg",
+        "media_type": "tv",
         "adult": false,
-        "backdrop_path": "/ookJ1LS8Uc0ji7cSDuJfV7Qh6Lb.jpg",
+        "original_language": "en",
         "genre_ids": [
-          10764
+          18
         ],
-        "id": 18770,
+        "popularity": 115.125,
+        "first_air_date": "2024-07-18",
+        "vote_average": 7.519,
+        "vote_count": 214,
         "origin_country": [
-          "ES"
-        ],
-        "original_language": "es",
-        "original_name": "Gran Hermano",
-        "overview": "Gran Hermano is a reality television series broadcast in Spain on Telecinco and La Siete produced by Endemol. It is part of the Big Brother franchise first developed in the Netherlands. As of February 2012, 19 editions of the show have aired.",
-        "popularity": 2032.79,
-        "poster_path": "/gQ0Emh2LT047Fip2HWye3NkrkQB.jpg",
-        "first_air_date": "2000-04-23",
-        "name": "Gran Hermano",
-        "vote_average": 4.773,
-        "vote_count": 11
+          "US"
+        ]
       },
       {
+        "backdrop_path": "/rpTpgiwj63N2f6HnB5SKhei5N80.jpg",
+        "id": 83659,
+        "name": "Guillermo del Toro's Cabinet of Curiosities",
+        "original_name": "Guillermo del Toro's Cabinet of Curiosities",
+        "overview": "Bizarre nightmares unfold in eight tales of terror in this visually stunning, spine-tingling horror collection curated by Guillermo del Toro.",
+        "poster_path": "/a91e9hpWwfCqxJI4xM9Q2RhuxgI.jpg",
+        "media_type": "tv",
         "adult": false,
-        "backdrop_path": "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
+        "original_language": "en",
         "genre_ids": [
-          16,
+          18,
+          9648,
+          10765
+        ],
+        "popularity": 47.812,
+        "first_air_date": "2022-10-25",
+        "vote_average": 7.6,
+        "vote_count": 785,
+        "origin_country": [
+          "US"
+        ]
+      },
+      {
+        "backdrop_path": "/3MC8VIxq8u1vKOKTfz6FtrFXuMZ.jpg",
+        "id": 135157,
+        "name": "Alchemy of Souls",
+        "original_name": "환혼",
+        "overview": "A powerful sorceress in a blind woman's body encounters a man from a prestigious family, who wants her help to change his destiny.",
+        "poster_path": "/q2IiPRSXPOZ6qVRj36WRAYEQyHs.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "ko",
+        "genre_ids": [
+          10765,
+          18,
+          10759,
+          9648
+        ],
+        "popularity": 220.049,
+        "first_air_date": "2022-06-18",
+        "vote_average": 8.662,
+        "vote_count": 599,
+        "origin_country": [
+          "KR"
+        ]
+      },
+      {
+        "backdrop_path": "/s1xnjbOIQtwGObPnydTebp74G2c.jpg",
+        "id": 90669,
+        "name": "1899",
+        "original_name": "1899",
+        "overview": "Passengers on an immigrant ship traveling to the new continent get caught in a mysterious riddle when they find a second vessel adrift on the open sea.",
+        "poster_path": "/qmpUDEgZawIlDU5HP3IJ9HjnpI3.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "de",
+        "genre_ids": [
+          9648,
+          18
+        ],
+        "popularity": 43.992,
+        "first_air_date": "2022-11-17",
+        "vote_average": 7.6,
+        "vote_count": 1242,
+        "origin_country": [
+          "DE"
+        ]
+      },
+      {
+        "backdrop_path": "/hoVuI69nygLQBJ4FqgRKnukDeKt.jpg",
+        "id": 106541,
+        "name": "The Witcher: Blood Origin",
+        "original_name": "The Witcher: Blood Origin",
+        "overview": "More than a thousand years before the world of The Witcher, seven outcasts in the elven world unite in a blood quest against an unstoppable power.",
+        "poster_path": "/vpfJK9F0UJNcAIIeC42oJyKMnZQ.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
           10765,
           10759,
-          9648
-        ],
-        "id": 94605,
-        "origin_country": [
-          "US"
-        ],
-        "original_language": "en",
-        "original_name": "Arcane",
-        "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.",
-        "popularity": 1964.981,
-        "poster_path": "/abf8tHznhSvl9BAElD2cQeRr7do.jpg",
-        "first_air_date": "2021-11-06",
-        "name": "Arcane",
-        "vote_average": 8.8,
-        "vote_count": 4360
-      },
-      {
-        "adult": false,
-        "backdrop_path": "/4ErOWmDGyGk0qCK1J8blAoj1a7a.jpg",
-        "genre_ids": [
           18
         ],
-        "id": 252373,
+        "popularity": 58.31,
+        "first_air_date": "2022-12-25",
+        "vote_average": 6.8,
+        "vote_count": 666,
         "origin_country": [
-          "PT"
-        ],
-        "original_language": "pt",
-        "original_name": "A Promessa",
-        "overview": "",
-        "popularity": 1894.291,
-        "poster_path": "/uptgxt2apx5wwWItQzqL0HwhjZC.jpg",
-        "first_air_date": "2024-06-18",
-        "name": "A Promessa",
-        "vote_average": 5.4,
-        "vote_count": 5
-      },
-      {
-        "adult": false,
-        "backdrop_path": null,
-        "genre_ids": [
-          18,
-          35
-        ],
-        "id": 36361,
-        "origin_country": [
-          "CZ"
-        ],
-        "original_language": "cs",
-        "original_name": "Ulice",
-        "overview": "Ulice is a Czech soap opera produced and broadcast by Nova. In the Czech language Ulice means street.\n\nThe show describes the lives of the Farský, Jordán, Boháč, Nikl, and Liška families and many other people that live in Prague. Their daily battle against real problems of living in a modern world like divorce, love, betrayal and illness or disease. Ulice often shows crime.",
-        "popularity": 1861.976,
-        "poster_path": "/gFEHva8Csx18hMGJJZ6gi4sFSKR.jpg",
-        "first_air_date": "2005-09-05",
-        "name": "Ulice",
-        "vote_average": 3.727,
-        "vote_count": 22
-      },
-      {
-        "adult": false,
-        "backdrop_path": null,
-        "genre_ids": [],
-        "id": 274136,
-        "origin_country": [
-          "CZ"
-        ],
-        "original_language": "cs",
-        "original_name": "Stardance XIII ...kolem dokola",
-        "overview": "",
-        "popularity": 1826.506,
-        "poster_path": "/iJPk8DSr2NVpfeFxembWxROqQNW.jpg",
-        "first_air_date": "2024-10-14",
-        "name": "Stardance XIII ...kolem dokola",
-        "vote_average": 8,
-        "vote_count": 2
+          "US"
+        ]
       }
     ],
-    "total_pages": 9324,
-    "total_results": 186475
+    "total_pages": 2,
+    "total_results": 40
   }

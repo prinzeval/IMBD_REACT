@@ -1,7 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import SearchIcon from "../search.svg"; // Ensure you have the search icon
 
-const Navbar = ({ toggleActive }) => {
+const Navbar = () => {
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkMode);
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  };
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${searchTerm}`);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="navbar">
       <div className="navbar-container">
@@ -14,7 +40,7 @@ const Navbar = ({ toggleActive }) => {
               <Link to="/home">Home</Link>
             </li>
             <li className="menu-list-item">
-              <Link to="/search">Search</Link>
+              <Link to="/popular-tv">Popular TV</Link>
             </li>
             <li className="menu-list-item">Genre</li>
             <li className="menu-list-item">Country</li>
@@ -23,18 +49,18 @@ const Navbar = ({ toggleActive }) => {
             <li className="menu-list-item">Top IMDB</li>
           </ul>
         </div>
-        <div className="profile-container">
-          <span className="profile-text-container">Hello, User</span>
-          <img
-            className="profile-picture"
-            src="https://via.placeholder.com/32"
-            alt="Profile"
+        <div className="search-container">
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Search..."
           />
-          <div className="toggle" onClick={toggleActive}>
-            <span className="toggle-icon">🌞</span>
-            <span className="toggle-icon">🌜</span>
-            <div className="toggle-ball"></div>
-          </div>
+          <img src={SearchIcon} alt="search" onClick={handleSearch} />
+        </div>
+        <div className="toggle" onClick={toggleDarkMode}>
+          {darkMode ? '🌞 Light Mode' : '🌜 Dark Mode'}
         </div>
       </div>
     </div>

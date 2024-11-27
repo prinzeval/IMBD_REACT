@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 
-const API_URL = "https://api.themoviedb.org/3/trending";
+const API_URL = "https://api.themoviedb.org/3";
 const API_KEY = "95969af960b31cb5bde9e76e0a841cd4";
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [trendingTVSeries, setTrendingTVSeries] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [popularTVSeries, setPopularTVSeries] = useState([]);
   const [timeWindow, setTimeWindow] = useState("week"); // Default to "week"
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
       try {
         const response = await fetch(
-          `${API_URL}/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`
+          `${API_URL}/trending/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`
         );
         if (!response.ok) {
           console.error(`Error: ${response.status} ${response.statusText}`);
@@ -30,7 +32,7 @@ const Home = () => {
     const fetchTrendingTVSeries = async () => {
       try {
         const response = await fetch(
-          `${API_URL}/tv/${timeWindow}?language=en-US&api_key=${API_KEY}`
+          `${API_URL}/trending/tv/${timeWindow}?language=en-US&api_key=${API_KEY}`
         );
         if (!response.ok) {
           console.error(`Error: ${response.status} ${response.statusText}`);
@@ -44,8 +46,44 @@ const Home = () => {
       }
     };
 
+    const fetchPopularMovies = async () => {
+      try {
+        const response = await fetch(
+          `${API_URL}/movie/popular?language=en-US&page=1&api_key=${API_KEY}`
+        );
+        if (!response.ok) {
+          console.error(`Error: ${response.status} ${response.statusText}`);
+          return;
+        }
+        const data = await response.json();
+        setPopularMovies(data.results || []);
+      } catch (error) {
+        console.error("Failed to fetch popular movies:", error);
+        setPopularMovies([]);
+      }
+    };
+
+    const fetchPopularTVSeries = async () => {
+      try {
+        const response = await fetch(
+          `${API_URL}/tv/popular?language=en-US&page=1&api_key=${API_KEY}`
+        );
+        if (!response.ok) {
+          console.error(`Error: ${response.status} ${response.statusText}`);
+          return;
+        }
+        const data = await response.json();
+        setPopularTVSeries(data.results || []);
+      } catch (error) {
+        console.error("Failed to fetch popular TV series:", error);
+        setPopularTVSeries([]);
+      }
+    };
+
     fetchTrendingMovies();
     fetchTrendingTVSeries();
+    fetchPopularMovies();
+    fetchPopularTVSeries();
   }, [timeWindow]);
 
   return (
@@ -73,6 +111,18 @@ const Home = () => {
       <h2>Trending TV Series</h2>
       <div className="container">
         {trendingTVSeries.map((tvSeries) => (
+          <MovieCard key={tvSeries.id} movie={tvSeries} />
+        ))}
+      </div>
+      <h2>Popular Movies</h2>
+      <div className="container">
+        {popularMovies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </div>
+      <h2>Popular TV Series</h2>
+      <div className="container">
+        {popularTVSeries.map((tvSeries) => (
           <MovieCard key={tvSeries.id} movie={tvSeries} />
         ))}
       </div>

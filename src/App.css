@@ -418,3 +418,140 @@ button:disabled {
   font-size: 14px;
   margin-top: 10px;
 }
+/* Base Styles */
+body {
+  background-color: #f0f0f0;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #181818;
+  color: #e5e5e5;
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container .logo {
+  color: #e50914;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-container .menu-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-list-item {
+  color: #e5e5e5;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-list-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-list-item:hover,
+.menu-list-item.active {
+  color: #e50914;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-container input {
+  width: 200px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #000;
+}
+
+.search-container img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.toggle {
+  background-color: #333;
+  color: #e5e5e5;
+  padding: 5px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle:hover {
+  background-color: #555;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #181818;
+  color: #e5e5e5;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Ensure movie cards maintain their height and do not shrink */
+.container .movie {
+  flex: 0 0 auto;
+}
+
+.movie-card {
+  background-color: #222;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 15px;
+  margin: 0 10px;
+  text-align: center;
+  color: white;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-card h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.movie-card p {
+  font-size: 14px;
+  margin-top: 10px;
+}
