@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, useLocation } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
-import SearchIcon from "../search.svg";
+import SearchIcon from "../SVG/search.svg";
 import Welcome from "../components/Welcome"; // Import the new Welcome component
 
 const API_URL = "https://api.themoviedb.org/3/";
