@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logo from "../IMG/file.png"; // Import your picture
+import logo from "../IMG/Logo.png"; 
 import SearchIcon from "../SVG/search.svg"; // Correct path to your search icon
 
 const Navbar = () => {

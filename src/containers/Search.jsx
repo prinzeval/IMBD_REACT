@@ -1,133 +1,112 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useSearchParams, useLocation } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
-const API_URL = "https://api.themoviedb.org/3";
+import SearchIcon from "../SVG/search.svg";
+import Welcome from "../components/Welcome"; // Import the new Welcome component
 
+const API_URL = "https://api.themoviedb.org/3/";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Use import.meta.env for Vite
 
-const Home = () => {
-  const [trendingMovies, setTrendingMovies] = useState([]);
-  const [trendingTVSeries, setTrendingTVSeries] = useState([]);
-  const [popularMovies, setPopularMovies] = useState([]);
-  const [popularTVSeries, setPopularTVSeries] = useState([]);
-  const [timeWindow, setTimeWindow] = useState("week"); // Default to "week"
+const Search = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("query") || ""; // Default to empty string
+  const page = parseInt(searchParams.get("page")) || 1;
+  const [searchTerm, setSearchTerm] = useState(query);
+  const [movies, setMovies] = useState([]);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    const fetchTrendingMovies = async () => {
-      try {
-        const response = await fetch(
-          `${API_URL}/trending/movie/${timeWindow}?language=en-US&api_key=${API_KEY}`
-        );
-        if (!response.ok) {
-          console.error(`Error: ${response.status} ${response.statusText}`);
-          return;
+    if (query) {
+      const fetchMovies = async () => {
+        try {
+          const response = await fetch(
+            `${API_URL}search/multi?query=${query}&include_adult=false&language=en-US&page=${page}&api_key=${API_KEY}`
+          );
+          if (!response.ok) {
+            console.error(`Error: ${response.status} ${response.statusText}`);
+            return;
+          }
+          const data = await response.json();
+          const filteredResults = data.results.filter(
+            (item) => item.media_type === "movie" || item.media_type === "tv"
+          );
+          setMovies(filteredResults || []);
+          setTotalPages(data.total_pages || 1);
+        } catch (error) {
+          console.error("Failed to fetch movies:", error);
+          setMovies([]);
+          setTotalPages(1);
         }
-        const data = await response.json();
-        setTrendingMovies(data.results || []);
-      } catch (error) {
-        console.error("Failed to fetch trending movies:", error);
-        setTrendingMovies([]);
-      }
-    };
-
-    const fetchTrendingTVSeries = async () => {
-      try {
-        const response = await fetch(
-          `${API_URL}/trending/tv/${timeWindow}?language=en-US&api_key=${API_KEY}`
-        );
-        if (!response.ok) {
-          console.error(`Error: ${response.status} ${response.statusText}`);
-          return;
-        }
-        const data = await response.json();
-        setTrendingTVSeries(data.results || []);
-      } catch (error) {
-        console.error("Failed to fetch trending TV series:", error);
-        setTrendingTVSeries([]);
-      }
-    };
-
-    const fetchPopularMovies = async () => {
-      try {
-        const response = await fetch(
-          `${API_URL}/movie/popular?language=en-US&page=1&api_key=${API_KEY}`
-        );
-        if (!response.ok) {
-          console.error(`Error: ${response.status} ${response.statusText}`);
-          return;
-        }
-        const data = await response.json();
-        setPopularMovies(data.results || []);
-      } catch (error) {
-        console.error("Failed to fetch popular movies:", error);
-        setPopularMovies([]);
-      }
-    };
-
-    const fetchPopularTVSeries = async () => {
-      try {
-        const response = await fetch(
-          `${API_URL}/tv/popular?language=en-US&page=1&api_key=${API_KEY}`
-        );
-        if (!response.ok) {
-          console.error(`Error: ${response.status} ${response.statusText}`);
-          return;
-        }
-        const data = await response.json();
-        setPopularTVSeries(data.results || []);
-      } catch (error) {
-        console.error("Failed to fetch popular TV series:", error);
-        setPopularTVSeries([]);
-      }
-    };
-
-    fetchTrendingMovies();
-    fetchTrendingTVSeries();
-    fetchPopularMovies();
-    fetchPopularTVSeries();
-  }, [timeWindow]);
+      };
+      fetchMovies();
+    }
+  }, [query, page]);
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${searchTerm}&page=1`);
+    }
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+  const handlePageChange = (direction) => {
+    const newPage = page + direction;
+    if (newPage > 0 && newPage <= totalPages) {
+      navigate(`/search?query=${query}&page=${newPage}`);
+      document.querySelector('.container').scrollBy({
+        left: direction * 200, // Adjust this value based on card width
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
-    <div className="home-container">
-      <div className="time-window-toggle">
-        <button
-          className={timeWindow === "week" ? "active" : ""}
-          onClick={() => setTimeWindow("week")}
-        >
-          This Week
-        </button>
-        <button
-          className={timeWindow === "day" ? "active" : ""}
-          onClick={() => setTimeWindow("day")}
-        >
-          Today
-        </button>
+    <div>
+      {location.pathname === "/" && <Welcome />}
+      <div className="search">
+        <input
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyDown} // Add this line to handle "Enter" key
+          placeholder="Search for movies"
+        />
+        <img src={SearchIcon} alt="search" onClick={handleSearch} />
       </div>
-      <h2>Trending Movies</h2>
-      <div className="container">
-        {trendingMovies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
-      <h2>Trending TV Series</h2>
-      <div className="container">
-        {trendingTVSeries.map((tvSeries) => (
-          <MovieCard key={tvSeries.id} movie={tvSeries} />
-        ))}
-      </div>
-      <h2>Popular Movies</h2>
-      <div className="container">
-        {popularMovies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
-      <h2>Popular TV Series</h2>
-      <div className="container">
-        {popularTVSeries.map((tvSeries) => (
-          <MovieCard key={tvSeries.id} movie={tvSeries} />
-        ))}
-      </div>
+      {movies.length > 0 ? (
+        <>
+          <div className="container">
+            {movies.map((movie) => (
+              <MovieCard key={movie.id} movie={movie} />
+            ))}
+          </div>
+          <div className="pagination">
+            <button onClick={() => handlePageChange(-1)} disabled={page === 1}>
+              Previous
+            </button>
+            <span>
+              Page {page} of {totalPages}
+            </span>
+            <button
+              onClick={() => handlePageChange(1)}
+              disabled={page === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        </>
+      ) : (
+        query && (
+          <div className="empty">
+            <h2>No movies found</h2>
+          </div>
+        )
+      )}
     </div>
   );
 };
 
-export default Home;
+export default Search;
