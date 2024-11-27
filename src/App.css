@@ -205,6 +205,11 @@ button:disabled {
   color: #e50914;
 }
 
+.menu-list-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .profile-container {
   display: flex;
   align-items: center;
@@ -323,4 +328,67 @@ button:disabled {
 
 .video-container.large iframe {
   border-radius: 3px;
+}
+
+/* Home Component Styles */
+.home-container {
+  padding: 20px;
+}
+
+.time-window-toggle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.time-window-toggle button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.time-window-toggle button.active {
+  background-color: #e50914;
+}
+
+.time-window-toggle button:hover {
+  background-color: #555;
+}
+
+.home-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e50914;
+}
+
+.container {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  scrollbar-width: thin; /* For Firefox */
+}
+
+.container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Ensure movie cards maintain their height and do not shrink */
+.container .movie {
+  flex: 0 0 auto;
 }

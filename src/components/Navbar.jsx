@@ -1,15 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ toggleActive }) => {
   return (
     <div className="navbar">
       <div className="navbar-container">
         <div className="logo-container">
-          <span className="logo">MyMovies</span>
+          <Link to="/home" className="logo">MyMovies</Link>
         </div>
         <div className="menu-container">
           <ul className="menu-list">
-            <li className="menu-list-item active">Home</li>
+            <li className="menu-list-item">
+              <Link to="/home">Home</Link>
+            </li>
+            <li className="menu-list-item">
+              <Link to="/search">Search</Link>
+            </li>
             <li className="menu-list-item">Genre</li>
             <li className="menu-list-item">Country</li>
             <li className="menu-list-item">Movies</li>
