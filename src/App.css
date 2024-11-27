@@ -450,9 +450,26 @@ body.dark-mode {
   align-items: center;
 }
 
-.logo-container .logo {
-  color: #e50914;
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  width: 50px; /* Increased size */
+  height: 50px; /* Increased size */
+  margin-right: 10px;
+}
+
+.website-name {
   font-size: 24px;
+  color: #e50914;
   font-weight: bold;
 }
 
@@ -523,6 +540,7 @@ body {
   color: #000;
   transition: background-color 0.3s, color 0.3s;
 }
+
 
 
 /* Ensure movie cards maintain their height and do not shrink */
