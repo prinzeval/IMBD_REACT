@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 
 const API_URL = "https://api.themoviedb.org/3";
-const API_KEY = "95969af960b31cb5bde9e76e0a841cd4";
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);

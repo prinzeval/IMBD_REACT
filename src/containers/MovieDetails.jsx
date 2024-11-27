@@ -136,7 +136,7 @@ import EpisodeSelector from "./EpisodeSelector";
 import Recommendations from "../components/Recommendations"; // Import Recommendations component
 
 const API_URL = "https://api.themoviedb.org/3/";
-const API_KEY = "95969af960b31cb5bde9e76e0a841cd4";
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 const MovieDetails = () => {
   const { id } = useParams();
