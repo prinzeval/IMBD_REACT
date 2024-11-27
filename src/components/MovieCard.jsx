@@ -27,7 +27,6 @@
 // export default MovieCard;
 
 
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -35,16 +34,10 @@ const MovieCard = ({ movie }) => {
   const { id, release_date, poster_path, title, name, media_type } = movie;
   const displayTitle = title || name;
 
-  // Determine the route based on media_type
-  const routePath = media_type === "tv" ? `/tv/${id}` : `/movie/${id}`;
-
   return (
-    <Link to={routePath} className="movie-link">
+    <Link to={media_type === "tv" ? `/tv/${id}` : `/movie/${id}`} className="movie-link">
       <div className="movie" key={id}>
-        <div>
-          <p>{release_date}</p>
-        </div>
-        <div>
+        <div className="poster-container">
           <img
             src={
               poster_path
@@ -52,11 +45,13 @@ const MovieCard = ({ movie }) => {
                 : "https://via.placeholder.com/400"
             }
             alt={displayTitle}
+            className="poster-image"
           />
         </div>
-        <div>
+        <div className="movie-info">
           <h3>{displayTitle}</h3>
-          <p>Type: {media_type}</p>
+          <p>{release_date}</p>
+          <span className="media-type">{media_type}</span>
         </div>
       </div>
     </Link>

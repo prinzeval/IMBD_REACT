@@ -129,11 +129,12 @@
 
 
 
-
-
-
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
+import VideoPlayer from "./VideoPlayer";
+import DetailsInfo from "./DetailsInfo";
+import SeasonSelector from "./SeasonSelector";
+import EpisodeSelector from "./EpisodeSelector";
 
 const API_URL = "https://api.themoviedb.org/3/";
 const API_KEY = "95969af960b31cb5bde9e76e0a841cd4";
@@ -160,11 +161,9 @@ const MovieDetails = () => {
         }
 
         const data = await response.json();
-        setDetails(data);
-        if (mediaType === "tv" && data.seasons.length > 0) {
-          // Filter out season 0
-          const filteredSeasons = data.seasons.filter(season => season.season_number !== 0);
-          setDetails({ ...data, seasons: filteredSeasons });
+        const filteredSeasons = data.seasons?.filter(season => season.season_number !== 0) || [];
+        setDetails({ ...data, seasons: filteredSeasons });
+        if (mediaType === "tv" && filteredSeasons.length > 0) {
           setSelectedSeason(filteredSeasons[0].season_number);
         }
       } catch (error) {
@@ -179,23 +178,9 @@ const MovieDetails = () => {
     return <div>Loading...</div>;
   }
 
-  const {
-    release_date,
-    first_air_date,
-    genres,
-    runtime,
-    episode_run_time,
-    production_companies,
-    networks,
-    imdb_id,
-    production_countries,
-    poster_path,
-    seasons,
-  } = details;
-
   const handleSeasonChange = (seasonNumber) => {
     setSelectedSeason(seasonNumber);
-    setSelectedEpisode(1); // Reset episode to 1 whenever season changes
+    setSelectedEpisode(1);
   };
 
   const handleEpisodeChange = (episodeNumber) => {
@@ -204,97 +189,29 @@ const MovieDetails = () => {
 
   return (
     <div className="details-container">
-      {location.pathname.includes("/tv/") ? (
-        <div className="video-container">
-          <iframe
-            src={`https://vidsrc.xyz/embed/tv?tmdb=${id}&season=${selectedSeason}&episode=${selectedEpisode}`}
-            style={{ width: "100%", height: "100%" }}
-            frameBorder="0"
-            referrerPolicy="origin"
-            allowFullScreen
-          ></iframe>
-          <div className="season-episode-selector">
-            <div className="season-selector">
-              <h3>Select Season:</h3>
-              {seasons.map((season) => (
-                <button
-                  key={season.season_number}
-                  onClick={() => handleSeasonChange(season.season_number)}
-                  className={selectedSeason === season.season_number ? "active" : ""}
-                >
-                  Season {season.season_number}
-                </button>
-              ))}
-            </div>
-            <div className="episode-selector">
-              <h3>Select Episode:</h3>
-              {seasons.find((season) => season.season_number === selectedSeason)?.episode_count > 0 &&
-                Array.from(
-                  { length: seasons.find((season) => season.season_number === selectedSeason).episode_count },
-                  (_, index) => index + 1
-                ).map((episodeNumber) => (
-                  <button
-                    key={episodeNumber}
-                    onClick={() => handleEpisodeChange(episodeNumber)}
-                    className={selectedEpisode === episodeNumber ? "active" : ""}
-                  >
-                    Episode {episodeNumber}
-                  </button>
-                ))}
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="video-container">
-          {imdb_id ? (
-            <iframe
-              src={`https://vidsrc.xyz/embed/movie?imdb=${imdb_id}`}
-              title={`${details.title || details.name} Video`}
-              allowFullScreen
-            />
-          ) : (
-            <p>No video available</p>
-          )}
+      <VideoPlayer 
+        location={location} 
+        id={id} 
+        imdb_id={details.imdb_id}
+        selectedSeason={selectedSeason}
+        selectedEpisode={selectedEpisode}
+      />
+      {location.pathname.includes("/tv/") && (
+        <div className="season-episode-selector">
+          <SeasonSelector 
+            seasons={details.seasons} 
+            selectedSeason={selectedSeason} 
+            handleSeasonChange={handleSeasonChange}
+          />
+          <EpisodeSelector
+            selectedSeason={selectedSeason}
+            selectedEpisode={selectedEpisode}
+            handleEpisodeChange={handleEpisodeChange}
+            seasons={details.seasons}
+          />
         </div>
       )}
-
-      <div className="details-wrapper">
-        {poster_path ? (
-          <img
-            src={`${IMAGE_BASE_URL}${poster_path}`}
-            alt={`${details.title || details.name} Poster`}
-            className="details-poster"
-          />
-        ) : (
-          <p>No poster available</p>
-        )}
-
-        <div className="details-info">
-          <h2>{details.title || details.name}</h2>
-          <p><strong>Release Date:</strong> {release_date || first_air_date || "N/A"}</p>
-          <p>
-            <strong>Genres:</strong>{" "}
-            {genres && genres.length > 0
-              ? genres.map((genre) => genre.name).join(", ")
-              : "N/A"}
-          </p>
-          <p><strong>Runtime:</strong> {runtime ? `${runtime} minutes` : episode_run_time ? `${episode_run_time[0]} minutes` : "N/A"}</p>
-          <p>
-            <strong>Origin Country:</strong>{" "}
-            {production_countries && production_countries.length > 0
-              ? production_countries.map((country) => country.name).join(", ")
-              : "N/A"}
-          </p>
-          <p>
-            <strong>Production:</strong>{" "}
-            {production_companies && production_companies.length > 0
-              ? production_companies.map((company) => company.name).join(", ")
-              : networks && networks.length > 0
-              ? networks.map((network) => network.name).join(", ")
-              : "N/A"}
-          </p>
-        </div>
-      </div>
+      <DetailsInfo details={details} />
     </div>
   );
 };

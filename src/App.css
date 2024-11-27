@@ -1,183 +1,275 @@
-Global Styling
+/* Global Styles */
 body {
+  background-color: #141414;
+  color: #e5e5e5;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #ffffff;
+  padding: 0;
 }
 
-.app {
-  text-align: center;
-  padding: 20px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #d88769;
+button {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+button.active {
+  background-color: #b20710;
+}
+
+button:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+}
+
+/* Search Component Styles */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px 0;
 }
 
-p {
-  line-height: 1.6;
-}
-
-/* Search Section */
-.search {
-  margin-bottom: 20px;
-}
-
 .search input {
-  padding: 10px;
   width: 300px;
-  margin-right: 10px;
-  border: 2px solid #d88769;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: #333;
-}
-
-.search input:focus {
-  outline: none;
-  border-color: #bb6e4f;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
 }
 
 .search img {
+  margin-left: 10px;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
 }
 
-/* Movie Container */
+/* Container for horizontally scrolling movie cards */
 .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1200px; /* Adjust this width as needed */
+  margin: 0 auto;
+  padding: 20px 0;
+  scrollbar-width: thin; /* For Firefox */
+}
+
+.container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Ensure movie cards maintain their height and do not shrink */
+.container .movie {
+  flex: 0 0 auto;
+}
+
+/* MovieCard Styles */
+.movie-link {
+  color: inherit;
+  display: inline-block;
+  margin-right: 20px; /* Adds space between movie cards */
 }
 
 .movie {
   background-color: #222;
-  padding: 20px;
-  border-radius: 10px;
-  color: #fff;
-  width: 250px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #444; /* Add border */
+  border-radius: 3px;
+  width: 200px; /* Fixed width */
+  height: 300px; /* Reduced fixed height */
+  flex: 0 0 200px; /* Prevents movie cards from shrinking */
+  transition: transform 0.3s;
+}
+
+.poster-container {
+  width: 100%;
+  height: 70%; /* Adjust image height to fit within the fixed card height */
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the area */
 }
 
 .movie:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.movie img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
+.movie-info {
+  padding: 10px;
+  text-align: center;
 }
 
-.movie span {
-  font-size: 1.1rem;
-  color: #d88769;
+.movie-info h3 {
+  font-size: 16px;
+  margin: 10px 0 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.movie h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
+.movie-info p {
+  font-size: 14px;
+  color: #999;
+  margin: 5px 0 0 0;
 }
 
-/* Movie Details Section */
-.movie-details {
-  text-align: left;
-  padding: 20px;
-  color: #fff;
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #333;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.media-type {
+  display: inline-block;
+  padding: 3px 5px;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #e50914; /* Highlight color */
+  border: 1px solid #e50914; /* Visible border */
+  border-radius: 3px;
 }
 
-.movie-details img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.movie-details p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-}
-
-.movie-details h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #d88769;
-}
-
-/* Video Section */
-.video-container {
-  margin-top: 20px;
-}
-
-.video-player {
-  width: 100%;
-  height: 400px;
-  border-radius: 8px;
-  background-color: #222;
-}
-
-/* Episode Buttons */
-.episode-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.episode-button {
-  padding: 10px 20px;
-  background-color: #d88769;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.episode-button.selected,
-.episode-button:hover {
-  background-color: #bb6e4f;
-}
-
-/* Welcome Section */
+/* Welcome Component Styles */
 .welcome {
-  margin: 20px 0;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #141414;
 }
 
 .welcome h1 {
-  font-size: 2.8rem;
-  color: #d88769;
-  margin-bottom: 10px;
-}
-
-.welcome p {
-  font-size: 1.2rem;
-  color: #bbb;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
-/* Empty Results */
-.empty {
-  color: #bbb;
-  font-size: 1.5rem;
-  margin: 20px;
+.welcome p {
+  font-size: 18px;
+  color: #999;
 }
 
-/* Pagination */
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container .logo {
+  color: #e50914;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-container .menu-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-list-item {
+  color: #e5e5e5;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-list-item:hover,
+.menu-list-item.active {
+  color: #e50914;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+  height: 24px;
+  background-color: #333;
+  border-radius: 12px;
+  padding: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-icon {
+  font-size: 12px;
+  color: #e5e5e5;
+}
+
+.toggle-ball {
+  width: 20px;
+  height: 20px;
+  background-color: #e50914;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle.active .toggle-ball {
+  transform: translateX(24px);
+}
+
+/* Adjusting Main Content for Navbar */
+.main-content {
+  padding-top: 70px; /* Adjust for fixed Navbar */
+}
+
+/* Season and Episode Selector Styles */
+.season-episode-selector {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.season-selector, .episode-selector {
+  margin: 0 20px;
+}
+
+.season-selector h3, .episode-selector h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Pagination Styles */
 .pagination {
   display: flex;
   justify-content: center;
@@ -186,50 +278,49 @@ p {
 }
 
 .pagination button {
-  padding: 10px 20px;
   margin: 0 10px;
-  background-color: #d88769;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  padding: 10px 20px;
 }
 
-.pagination button:disabled {
-  background-color: #444;
-  cursor: not-allowed;
+/* DetailsInfo Styles */
+.details-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
 }
 
-.pagination button:hover:not(:disabled) {
-  background-color: #bb6e4f;
+.details-poster {
+  width: 300px;
+  border-radius: 3px;
 }
 
-.pagination span {
-  font-size: 1.2rem;
-  color: #d88769;
+.details-info {
+  margin-left: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .search input {
-    width: 80%;
-    margin-bottom: 10px;
-  }
-
-  .movie {
-    width: 90%;
-  }
-
-  .movie-details {
-    padding: 15px;
-  }
-
-  .pagination button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
+.details-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
+.details-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
 
+.details-info .overview {
+  margin-top: 20px;
+  font-size: 16px;
+}
+/* VideoPlayer Styles */
+.video-container.large {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container.large iframe {
+  border-radius: 3px;
+}

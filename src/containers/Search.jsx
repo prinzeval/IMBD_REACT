@@ -21,7 +21,6 @@ const Search = () => {
 
   useEffect(() => {
     if (query) {
-      // Fetch movies only if a query is provided
       const fetchMovies = async () => {
         try {
           const response = await fetch(
@@ -34,8 +33,6 @@ const Search = () => {
           }
 
           const data = await response.json();
-
-          // Filter out results with media_type = "person"
           const filteredResults = data.results.filter(
             (item) => item.media_type === "movie" || item.media_type === "tv"
           );
@@ -51,7 +48,7 @@ const Search = () => {
 
       fetchMovies();
     }
-  }, [query, page]); // Re-run whenever `query` or `page` changes
+  }, [query, page]);
 
   const handleSearch = () => {
     if (searchTerm.trim()) {
@@ -59,22 +56,32 @@ const Search = () => {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   const handlePageChange = (direction) => {
     const newPage = page + direction;
     if (newPage > 0 && newPage <= totalPages) {
       navigate(`/search?query=${query}&page=${newPage}`);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.querySelector('.container').scrollBy({
+        left: direction * 200, // Adjust this value based on card width
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
     <div>
-      {location.pathname === "/" && <Welcome />} {/* Render Welcome on "/" */}
+      {location.pathname === "/" && <Welcome />}
 
       <div className="search">
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyDown} // Add this line to handle "Enter" key
           placeholder="Search for movies"
         />
         <img src={SearchIcon} alt="search" onClick={handleSearch} />
