@@ -1,6 +1,9 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Add this line to load environment variables
 
 const app = express();
 const port = process.env.PORT || 3000;

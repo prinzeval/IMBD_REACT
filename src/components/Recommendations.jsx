@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 
+
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY; 
+
 const Recommendations = ({ id, mediaType }) => {
   const [recommendations, setRecommendations] = useState([]);
 
@@ -8,8 +11,8 @@ const Recommendations = ({ id, mediaType }) => {
     const fetchRecommendations = async () => {
       const endpoint =
         mediaType === "movie"
-          ? `https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US&page=1&api_key=95969af960b31cb5bde9e76e0a841cd4`
-          : `https://api.themoviedb.org/3/tv/${id}/recommendations?language=en-US&page=1&api_key=95969af960b31cb5bde9e76e0a841cd4`;
+          ? `https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US&page=1&api_key=${API_KEY}`
+          : `https://api.themoviedb.org/3/tv/${id}/recommendations?language=en-US&page=1&api_key=${API_KEY}`;
 
       try {
         const response = await fetch(endpoint);
