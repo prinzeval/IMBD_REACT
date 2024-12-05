@@ -13,7 +13,7 @@ a {
 }
 
 button {
-  background-color: #e50914;
+  background-color: #561717;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -23,8 +23,12 @@ button {
   border-radius: 3px;
 }
 
+button:hover{
+  background-color: #e50914;
+}
+
 button.active {
-  background-color: #b20710;
+  background-color: #e50914;
 }
 
 button:disabled {

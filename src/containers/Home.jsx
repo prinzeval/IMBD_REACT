@@ -5,7 +5,6 @@ const API_URL = "https://api.themoviedb.org/3";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Use import.meta.env for Vite
 
-
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [trendingTVSeries, setTrendingTVSeries] = useState([]);
