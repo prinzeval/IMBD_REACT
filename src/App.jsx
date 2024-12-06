@@ -5,6 +5,7 @@ import SearchResult from "./components/SearchResult"; // Import SearchResult com
 import MovieDetails from "./containers/MovieDetails";
 import Navbar from "./components/Navbar"; // Import Navbar
 import Welcome from "./components/Welcome"; // Import Welcome component
+
 import "./App.css";
 
 const App = () => {

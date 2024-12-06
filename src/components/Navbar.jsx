@@ -30,6 +30,9 @@ const Navbar = () => {
             <span className="website-name">MYTVV</span>
           </Link>
         </div>
+        <div className="search-container">
+          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        </div>
         <div className={`menu-container ${sidebarOpen ? 'open' : ''}`}>
           <ul className="menu-list">
             <li className="menu-list-item">
@@ -45,10 +48,7 @@ const Navbar = () => {
             <li className="menu-list-item">Top IMDB</li>
           </ul>
         </div>
-        <div className="search-container">
-          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        </div>
-        <div className="toggle" onClick={toggleDarkMode}>
+               <div className="toggle" onClick={toggleDarkMode}>
           {darkMode ? '🌞' : '🌜'}
         </div>
         <div className="hamburger-icon" onClick={toggleSidebar}>
