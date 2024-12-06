@@ -41,22 +41,21 @@ button:disabled {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: px 0;
+  margin: 10px ;
 }
 
 .search input {
-  width: 290px;
+  width: 100px;
   padding: 7px;
-  font-size: 16px;
+  font-size: 12px;
   border: none;
-  border-radius: 20px;
+  border-radius: 9px;
 }
 
 .search img {
   margin-left: 10px;
   cursor: pointer;
 }
-
 
 /* Container for horizontally scrolling movie cards */
 .container {
@@ -166,7 +165,6 @@ button:disabled {
   font-size: 18px;
   color: #999;
 }
-
 
 /* Adjusting Main Content for Navbar */
 .main-content {
@@ -283,6 +281,24 @@ button:disabled {
   .details-poster {
     max-width: 100%;
   }
+
+  .navbar {
+    display: none; /* Hide desktop navbar on small screens */
+  }
+
+  .mobile-navbar {
+    display: flex; /* Show mobile navbar on small screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-navbar {
+    display: none; /* Hide mobile navbar on large screens */
+  }
+
+  .navbar {
+    display: flex; /* Show desktop navbar on large screens */
+  }
 }
 
 /* Home Component Styles */
@@ -320,58 +336,342 @@ button:disabled {
   margin-bottom: 20px;
   color: #e50914;
 }
-.container {
+
+/* Scroll Container and Buttons */
+.scroll-container {
+  position: relative;
   display: flex;
-  overflow-x: auto;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.scroll-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+.scroll-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-button:focus {
+  outline: none;
+}
+
+/* Base Styles */
+body {
+  background-color: #f0f0f0;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #181818;
+  color: #e5e5e5;
+}
+
+/* Navbar Styles */
+.navbar {
   width: 100%;
-  max-width: 1200px; /* Adjust this width as needed */
-  margin: 0 auto;
-  padding: 20px 0;
-  scrollbar-width: thin; /* For Firefox */
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
-.container::-webkit-scrollbar {
-  height: 10px;
+.navbar-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.container::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
-.container::-webkit-scrollbar-thumb:hover {
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  width: 50px; /* Increased size */
+  height: 50px; /* Increased size */
+  margin-right: 10px;
+}
+
+.website-name {
+  font-size: 24px;
+  color: #e50914;
+  font-weight: bold;
+}
+
+.menu-container .menu-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-list-item {
+  color: #e5e5e5;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-list-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-list-item:hover,
+.menu-list-item.active {
+  color: #e50914;
+}
+
+.toggle {
+  background-color: #333;
+  color: #e5e5e5;
+  padding: 5px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle:hover {
   background-color: #555;
 }
 
-/* Ensure movie cards maintain their height and do not shrink */
-.container .movie {
-  flex: 0 0 auto;
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #181818;
+  color: #e5e5e5;
 }
 
-.movie-card {
-  background-color: #222;
+/* Mobile Navbar Styles */
+.mobile-navbar {
+  display: none; /* Initially hidden */
+}
+
+.mobile-navbar .navbar-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-navbar .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-navbar .logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mobile-navbar .logo {
+  width: 50px; /* Keep the same size as desktop */
+  height: 50px;
+  margin-right: 10px;
+}
+
+.mobile-navbar .website-name {
+  font-size: 20px;
+  color: #e50914;
+  font-weight: bold;
+}
+
+.mobile-navbar .search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.mobile-navbar .toggle {
+  background-color: #333;
+  color: #e5e5e5;
+  padding: 5px px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-right:9px ;
+}
+
+.mobile-navbar .toggle:hover {
+  background-color: #555;
+}
+
+.mobile-navbar .hamburger-icon {
+  background-color: #333;
+  color: #e5e5e5;
+  padding: 10px;
   border-radius: 5px;
-  overflow: hidden;
-  padding: 15px;
-  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-navbar .hamburger-icon:hover {
+  background-color: #555;
+}
+
+.mobile-navbar .dropdown {
+  display: none;
+}
+
+.mobile-navbar .dropdown.open {
+  display: block;
+}
+
+.mobile-navbar .dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #181818;
+  border-top: 1px solid #333;
+}
+
+.mobile-navbar .dropdown-menu .menu-list-item {
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-navbar .dropdown-menu .menu-list-item a {
+  color: #e5e5e5;
+  display: block;
+}
+
+.mobile-navbar .dropdown-menu .menu-list-item:hover,
+.mobile-navbar .dropdown-menu .menu-list-item.active {
+  background-color: #333;
+}
+
+.mobile-navbar .dropdown-menu .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-navbar .dropdown-menu .submenu li {
+  padding: 5px 20px;
+}
+
+.mobile-navbar .dropdown-menu .submenu li a {
+  color: #e5e5e5;
+}
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide desktop navbar on small screens */
+  }
+
+  .mobile-navbar {
+    display: flex; /* Show mobile navbar on small screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-navbar {
+    display: none; /* Hide mobile navbar on large screens */
+  }
+
+  .navbar {
+    display: flex; /* Show desktop navbar on large screens */
+  }
+}
+
+/* Home Component Styles */
+.home-container {
+  padding: 20px;
+}
+
+.time-window-toggle {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.time-window-toggle button {
+  background-color: #333;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
 }
 
-.movie-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+.time-window-toggle button.active {
+  background-color: #e50914;
 }
 
-.movie-card h3 {
-  font-size: 18px;
-  margin-top: 10px;
+.time-window-toggle button:hover {
+  background-color: #555;
 }
 
-.movie-card p {
-  font-size: 14px;
-  margin-top: 10px;
+.home-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e50914;
+}
+
+/* Scroll Container and Buttons */
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.scroll-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+.scroll-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-button:focus {
+  outline: none;
 }
 
 /* Base Styles */
@@ -507,38 +807,55 @@ body {
   margin-top: 10px;
 }
 
-/* Scroll Container and Buttons */
-.scroll-container {
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #181818;
+  color: #e5e5e5;
+}
+
+/* Mobile Navbar Styles */
+.mobile-navbar {
+  display: none; /* Initially hidden */
   position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  z-index: 10000; /* Ensure a high z-index */
+   /* Add background color for visibility */
+  width: 100%; /* Full width */
 }
 
-.scroll-button {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide desktop navbar on small screens */
+  }
+
+  .mobile-navbar {
+    display: flex; /* Show mobile navbar on small screens */
+    position: fixed; /* Make it fixed to float over everything */
+    top: 0;
+    left: 0;
+    z-index: 10000; /* High z-index to float over everything */
+     /* Add background color for visibility */
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add a subtle shadow for separation */
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    right: 0;
+    width: 50%; /* Full width */
+    z-index: 9999; /* Ensure it's above other content but below the navbar */
+    background-color: white; /* Match background color for visibility */
+  }
 }
 
-.scroll-button.left {
-  left: 0;
-}
+/* Media query for large screens */
+@media (min-width: 769px) {
+  .mobile-navbar {
+    display: none; /* Hide mobile navbar on large screens */
+  }
 
-.scroll-button.right {
-  right: 0;
-}
-
-.scroll-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.scroll-button:focus {
-  outline: none;
+  .navbar {
+    display: flex; /* Show desktop navbar on large screens */
+  }
 }

@@ -4,6 +4,7 @@ import Home from "./containers/Home";
 import SearchResult from "./components/SearchResult"; // Import SearchResult component
 import MovieDetails from "./containers/MovieDetails";
 import Navbar from "./components/Navbar"; // Import Navbar
+import MobileNav from "./components/MobileNav"; // Import MobileNav
 import Welcome from "./components/Welcome"; // Import Welcome component
 
 import "./App.css";
@@ -12,7 +13,8 @@ const App = () => {
   return (
     <div className="app-container">
       <Router>
-        <Navbar /> {/* SearchInput is now part of the Navbar */}
+        <Navbar /> {/* Desktop Navbar */}
+        <MobileNav /> {/* Mobile Navbar */}
         <div className="main-content">
           <Routes>
             <Route path="/home" element={<Home />} />
