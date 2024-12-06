@@ -4,10 +4,10 @@ import VideoPlayer from "./VideoPlayer";
 import DetailsInfo from "./DetailsInfo";
 import SeasonSelector from "./SeasonSelector";
 import EpisodeSelector from "./EpisodeSelector";
-import Recommendations from "../components/Recommendations"; // Import Recommendations component
+import Recommendations from "../components/Recommendations";
 
 const API_URL = "https://api.themoviedb.org/3/";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Use import.meta.env for Vite
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -81,7 +81,7 @@ const MovieDetails = () => {
         </div>
       )}
       <DetailsInfo details={details} />
-      <Recommendations id={id} mediaType={location.pathname.includes("/tv/") ? "tv" : "movie"} /> {/* Include Recommendations component */}
+      <Recommendations id={id} mediaType={location.pathname.includes("/tv/") ? "tv" : "movie"} />
     </div>
   );
 };

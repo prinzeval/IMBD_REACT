@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MovieCard from "../components/MovieCard";
 
 const API_URL = "https://api.themoviedb.org/3";
-
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Use import.meta.env for Vite
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -11,6 +10,16 @@ const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularTVSeries, setPopularTVSeries] = useState([]);
   const [timeWindow, setTimeWindow] = useState("week"); // Default to "week"
+
+  const movieContainerRef = useRef(null);
+  const tvContainerRef = useRef(null);
+
+  const scroll = (containerRef, direction) => {
+    containerRef.current.scrollBy({
+      left: direction * 200, // Adjust the scroll amount
+      behavior: 'smooth'
+    });
+  };
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
@@ -57,7 +66,8 @@ const Home = () => {
           return;
         }
         const data = await response.json();
-        setPopularMovies(data.results || []);
+        const moviesWithMediaType = data.results.map(movie => ({ ...movie, media_type: 'movie' }));
+        setPopularMovies(moviesWithMediaType || []);
       } catch (error) {
         console.error("Failed to fetch popular movies:", error);
         setPopularMovies([]);
@@ -67,14 +77,15 @@ const Home = () => {
     const fetchPopularTVSeries = async () => {
       try {
         const response = await fetch(
-          `${API_URL}/tv/popular?language=en-US&page=1&api_key=${API_KEY}`
+          `${API_URL}/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_origin_country=US&api_key=${API_KEY}`
         );
         if (!response.ok) {
           console.error(`Error: ${response.status} ${response.statusText}`);
           return;
         }
         const data = await response.json();
-        setPopularTVSeries(data.results || []);
+        const tvSeriesWithMediaType = data.results.map(tv => ({ ...tv, media_type: 'tv' }));
+        setPopularTVSeries(tvSeriesWithMediaType || []);
       } catch (error) {
         console.error("Failed to fetch popular TV series:", error);
         setPopularTVSeries([]);
@@ -103,29 +114,49 @@ const Home = () => {
           Today
         </button>
       </div>
+      
       <h2>Trending Movies</h2>
-      <div className="container">
-        {trendingMovies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
+      <div className="scroll-container">
+        <button className="scroll-button left" onClick={() => scroll(movieContainerRef, -1)}>{"<"}</button>
+        <div className="container" ref={movieContainerRef}>
+          {trendingMovies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </div>
+        <button className="scroll-button right" onClick={() => scroll(movieContainerRef, 1)}>{">"}</button>
       </div>
+      
       <h2>Trending TV Series</h2>
-      <div className="container">
-        {trendingTVSeries.map((tvSeries) => (
-          <MovieCard key={tvSeries.id} movie={tvSeries} />
-        ))}
+      <div className="scroll-container">
+        <button className="scroll-button left" onClick={() => scroll(tvContainerRef, -1)}>{"<"}</button>
+        <div className="container" ref={tvContainerRef}>
+          {trendingTVSeries.map((tvSeries) => (
+            <MovieCard key={tvSeries.id} movie={tvSeries} />
+          ))}
+        </div>
+        <button className="scroll-button right" onClick={() => scroll(tvContainerRef, 1)}>{">"}</button>
       </div>
+      
       <h2>Popular Movies</h2>
-      <div className="container">
-        {popularMovies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
+      <div className="scroll-container">
+        <button className="scroll-button left" onClick={() => scroll(movieContainerRef, -1)}>{"<"}</button>
+        <div className="container" ref={movieContainerRef}>
+          {popularMovies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </div>
+        <button className="scroll-button right" onClick={() => scroll(movieContainerRef, 1)}>{">"}</button>
       </div>
+      
       <h2>Popular TV Series</h2>
-      <div className="container">
-        {popularTVSeries.map((tvSeries) => (
-          <MovieCard key={tvSeries.id} movie={tvSeries} />
-        ))}
+      <div className="scroll-container">
+        <button className="scroll-button left" onClick={() => scroll(tvContainerRef, -1)}>{"<"}</button>
+        <div className="container" ref={tvContainerRef}>
+          {popularTVSeries.map((tvSeries) => (
+            <MovieCard key={tvSeries.id} movie={tvSeries} />
+          ))}
+        </div>
+        <button className="scroll-button right" onClick={() => scroll(tvContainerRef, 1)}>{">"}</button>
       </div>
     </div>
   );

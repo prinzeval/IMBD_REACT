@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useSearchParams, useLocation } from "react-router-dom";
-import MovieCard from "../components/MovieCard";
-import SearchIcon from "../SVG/search.svg";
-import Welcome from "../components/Welcome"; // Import the new Welcome component
+import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
+import MovieCard from "./MovieCard";
+import Welcome from "./Welcome"; // Import the new Welcome component
 
 const API_URL = "https://api.themoviedb.org/3/";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Use import.meta.env for Vite
 
-const Search = () => {
+const SearchResult = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query") || ""; // Default to empty string
   const page = parseInt(searchParams.get("page")) || 1;
-  const [searchTerm, setSearchTerm] = useState(query);
   const [movies, setMovies] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
 
@@ -43,16 +41,7 @@ const Search = () => {
       fetchMovies();
     }
   }, [query, page]);
-  const handleSearch = () => {
-    if (searchTerm.trim()) {
-      navigate(`/search?query=${searchTerm}&page=1`);
-    }
-  };
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      handleSearch();
-    }
-  };
+
   const handlePageChange = (direction) => {
     const newPage = page + direction;
     if (newPage > 0 && newPage <= totalPages) {
@@ -67,15 +56,6 @@ const Search = () => {
   return (
     <div>
       {location.pathname === "/" && <Welcome />}
-      <div className="search">
-        <input
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={handleKeyDown} // Add this line to handle "Enter" key
-          placeholder="Search for movies"
-        />
-        <img src={SearchIcon} alt="search" onClick={handleSearch} />
-      </div>
       {movies.length > 0 ? (
         <>
           <div className="container">
@@ -109,4 +89,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchResult;

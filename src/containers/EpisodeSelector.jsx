@@ -7,15 +7,17 @@ const EpisodeSelector = ({ selectedSeason, selectedEpisode, handleEpisodeChange,
   return (
     <div className="episode-selector">
       <h3>Select Episode:</h3>
-      {Array.from({ length: episodeCount }, (_, index) => index + 1).map((episodeNumber) => (
-        <button
-          key={episodeNumber}
-          onClick={() => handleEpisodeChange(episodeNumber)}
-          className={selectedEpisode === episodeNumber ? "active" : ""}
-        >
-          Episode {episodeNumber}
-        </button>
-      ))}
+      <div className="episode-buttons">
+        {Array.from({ length: episodeCount }, (_, index) => index + 1).map((episodeNumber) => (
+          <button
+            key={episodeNumber}
+            onClick={() => handleEpisodeChange(episodeNumber)}
+            className={selectedEpisode === episodeNumber ? "active" : ""}
+          >
+            Episode {episodeNumber}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

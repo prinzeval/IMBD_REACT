@@ -13,7 +13,7 @@ const DetailsInfo = ({ details }) => {
     networks,
     production_countries,
     poster_path,
-    overview, // Add overview here
+    overview,
   } = details;
 
   return (
@@ -51,7 +51,7 @@ const DetailsInfo = ({ details }) => {
             ? networks.map((network) => network.name).join(", ")
             : "N/A"}
         </p>
-        <p><strong>Overview:</strong> {overview || "N/A"}</p> {/* Display overview */}
+        <p><strong>Overview:</strong> {overview || "N/A"}</p>
       </div>
     </div>
   );
