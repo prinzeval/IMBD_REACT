@@ -1,3 +1,7 @@
+// THIS IS src/containers/MovieDetails.jsx
+
+
+
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import VideoPlayer from "./VideoPlayer";

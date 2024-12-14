@@ -1,3 +1,6 @@
+// THIS IS src/components/Recommendations.jsx
+
+
 import React, { useEffect, useState, useRef } from "react";
 import MovieCard from "./MovieCard";
 

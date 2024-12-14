@@ -1,3 +1,6 @@
+// THIS IS src/containers/EpisodeSelector.jsx
+
+
 import React from "react";
 
 const EpisodeSelector = ({ selectedSeason, selectedEpisode, handleEpisodeChange, seasons }) => {

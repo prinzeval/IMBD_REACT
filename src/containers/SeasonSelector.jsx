@@ -1,3 +1,6 @@
+// THIS IS src/containers/SeasonSelector.jsx
+
+
 import React from "react";
 
 const SeasonSelector = ({ seasons, selectedSeason, handleSeasonChange }) => (

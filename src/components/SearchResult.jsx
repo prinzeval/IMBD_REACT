@@ -1,3 +1,6 @@
+// THIS IS src/components/SearchResults.jsx
+
+
 import React, { useState, useEffect } from "react";
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import MovieCard from "./MovieCard";

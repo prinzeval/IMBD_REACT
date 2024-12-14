@@ -1,3 +1,6 @@
+// THIS IS src/components/Navbar.jsx
+
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../IMG/Logo.png";
@@ -36,7 +39,7 @@ const Navbar = () => {
               <Link to="/home">Home</Link>
             </li>
             <li className="menu-list-item">
-              <Link to="/popular-tv">Popular TV</Link>
+              <Link to="/home">Popular TV</Link>
             </li>
             <li className="menu-list-item">Genre</li>
             <li className="menu-list-item">Country</li>

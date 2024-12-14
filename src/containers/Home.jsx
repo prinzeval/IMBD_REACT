@@ -1,3 +1,6 @@
+// THIS IS src/containers/Home.jsx
+
+
 import React, { useState, useEffect, useRef } from "react";
 import MovieCard from "../components/MovieCard";
 

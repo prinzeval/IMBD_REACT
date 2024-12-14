@@ -1,3 +1,6 @@
+// THIS IS src/components/SearchInput.jsx
+
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "../SVG/search.svg";
