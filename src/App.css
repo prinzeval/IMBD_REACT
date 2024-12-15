@@ -152,23 +152,53 @@ button:disabled {
 /* Welcome Component Styles */
 .welcome {
   text-align: center;
-  padding: 50px 20px;
-  background-color: #141414;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
 .welcome h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  color: #ff4500; /* Vibrant orange */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
-.welcome li {
-  list-style-type: none;
-  margin-bottom: 10px;
+
+.welcome h2 {
+  color: #fff; /* White text */
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.welcome ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  color: #fff; /* White text */
+}
+
+.welcome ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.welcome ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
 }
 
 .welcome p {
-  font-size: 18px;
-  color: #999;
+  font-size: 1rem;
+  color: #ccc; /* Light grey text */
+  line-height: 1.6;
 }
+
 
 /* Adjusting Main Content for Navbar */
 .main-content {
