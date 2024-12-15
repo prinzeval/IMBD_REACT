@@ -1,32 +1,41 @@
 // THIS IS src/components/SearchInput.jsx
 
 
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import SearchIcon from "../SVG/search.svg";
+import debounce from 'lodash.debounce';
 
 const SearchInput = ({ searchTerm, setSearchTerm }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const debouncedNavigate = useCallback(
+    debounce((query) => {
+      navigate(`/search?query=${query}&page=1`);
+    }, 500),
+    [navigate]
+  );
+
   useEffect(() => {
     if (location.pathname === "/search") {
-      navigate(`/search?query=${searchTerm}&page=1`);
+      debouncedNavigate(searchTerm);
     }
-  }, [searchTerm, navigate, location.pathname]);
+  }, [searchTerm, debouncedNavigate, location.pathname]);
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       if (searchTerm.trim()) {
-        navigate(`/search?query=${searchTerm}&page=1`);
+        debouncedNavigate(searchTerm);
       }
     }
   };
+
   const handleSearch = () => {
     if (searchTerm.trim()) {
-      navigate(`/search?query=${searchTerm}&page=1`);
+      debouncedNavigate(searchTerm);
     }
-  }
+  };
 
   return (
     <div className="search">
@@ -36,7 +45,7 @@ const SearchInput = ({ searchTerm, setSearchTerm }) => {
         onKeyDown={handleKeyDown}
         placeholder="Search for movies"
       />
-      <img src={SearchIcon} alt="search" onClick={handleSearch}/>
+      <img src={SearchIcon} alt="search" onClick={handleSearch} />
     </div>
   );
 };
