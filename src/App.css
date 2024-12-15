@@ -175,6 +175,7 @@ button:disabled {
   padding-top: 70px; /* Adjust for fixed Navbar */
 }
 
+
 /* Season and Episode Selector Styles */
 .season-episode-selector {
   display: flex;
@@ -202,6 +203,8 @@ button:disabled {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  max-height: 200px; /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .episode-buttons button {
@@ -221,6 +224,58 @@ button:disabled {
 .episode-buttons button.active {
   background-color: #e50914;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .details-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-info {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .details-info h2 {
+    font-size: 20px;
+  }
+
+  .details-info p {
+    font-size: 14px;
+  }
+
+  .details-poster {
+    max-width: 100%;
+  }
+
+  .navbar {
+    display: none; /* Hide desktop navbar on small screens */
+  }
+
+  .mobile-navbar {
+    display: flex; /* Show mobile navbar on small screens */
+  }
+
+  .episode-buttons {
+    max-height: 300px; /* Adjust for mobile view */
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-navbar {
+    display: none; /* Hide mobile navbar on large screens */
+  }
+
+  .navbar {
+    display: flex; /* Show desktop navbar on large screens */
+  }
+}
+
+
+
+
 
 /* DetailsInfo Styles */
 .details-wrapper {

@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import Download from "./Download"; // Import the new Download component
+import React, { useState, useEffect } from "react";
+import Download from "./Download"; // Import the Download component
 
 const VideoPlayer = ({ location, id, imdb_id, selectedSeason, selectedEpisode }) => {
   const [source, setSource] = useState("vidsrc"); // Default source
+  const [muted, setMuted] = useState(false); // State to control mute
+
+  useEffect(() => {
+    // Unmute the video when source is set to vidlink
+    if (source === "vidlink") {
+      setMuted(false);
+    }
+  }, [source]);
 
   const getVideoSrc = () => {
     if (location.pathname.includes("/tv/")) {
@@ -47,6 +55,7 @@ const VideoPlayer = ({ location, id, imdb_id, selectedSeason, selectedEpisode })
         frameBorder="0"
         referrerPolicy="origin"
         allowFullScreen
+        muted={muted ? "muted" : ""}
       ></iframe>
       <div className="video-buttons">
         <button
@@ -62,7 +71,10 @@ const VideoPlayer = ({ location, id, imdb_id, selectedSeason, selectedEpisode })
           Server 1
         </button>
         <button
-          onClick={() => setSource("vidlink")}
+          onClick={() => {
+            setSource("vidlink");
+            setMuted(false); // Unmute when selecting vidlink
+          }}
           className={source === "vidlink" ? "active" : ""}
         >
           Server 2
