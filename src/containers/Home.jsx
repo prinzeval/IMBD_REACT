@@ -1,6 +1,3 @@
-// THIS IS src/containers/Home.jsx
-
-
 import React, { useState, useEffect, useRef } from "react";
 import MovieCard from "../components/MovieCard";
 
@@ -14,8 +11,10 @@ const Home = () => {
   const [popularTVSeries, setPopularTVSeries] = useState([]);
   const [timeWindow, setTimeWindow] = useState("week"); // Default to "week"
 
-  const movieContainerRef = useRef(null);
-  const tvContainerRef = useRef(null);
+  const trendingMoviesRef = useRef(null);
+  const trendingTVSeriesRef = useRef(null);
+  const popularMoviesRef = useRef(null);
+  const popularTVSeriesRef = useRef(null);
 
   const scroll = (containerRef, direction) => {
     containerRef.current.scrollBy({
@@ -120,46 +119,46 @@ const Home = () => {
       
       <h2>Trending Movies</h2>
       <div className="scroll-container">
-        <button className="scroll-button left" onClick={() => scroll(movieContainerRef, -1)}>{"<"}</button>
-        <div className="container" ref={movieContainerRef}>
+        <button className="scroll-button left" onClick={() => scroll(trendingMoviesRef, -1)}>{"<"}</button>
+        <div className="container" ref={trendingMoviesRef}>
           {trendingMovies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
-        <button className="scroll-button right" onClick={() => scroll(movieContainerRef, 1)}>{">"}</button>
+        <button className="scroll-button right" onClick={() => scroll(trendingMoviesRef, 1)}>{">"}</button>
       </div>
       
       <h2>Trending TV Series</h2>
       <div className="scroll-container">
-        <button className="scroll-button left" onClick={() => scroll(tvContainerRef, -1)}>{"<"}</button>
-        <div className="container" ref={tvContainerRef}>
+        <button className="scroll-button left" onClick={() => scroll(trendingTVSeriesRef, -1)}>{"<"}</button>
+        <div className="container" ref={trendingTVSeriesRef}>
           {trendingTVSeries.map((tvSeries) => (
             <MovieCard key={tvSeries.id} movie={tvSeries} />
           ))}
         </div>
-        <button className="scroll-button right" onClick={() => scroll(tvContainerRef, 1)}>{">"}</button>
+        <button className="scroll-button right" onClick={() => scroll(trendingTVSeriesRef, 1)}>{">"}</button>
       </div>
       
       <h2>Popular Movies</h2>
       <div className="scroll-container">
-        <button className="scroll-button left" onClick={() => scroll(movieContainerRef, -1)}>{"<"}</button>
-        <div className="container" ref={movieContainerRef}>
+        <button className="scroll-button left" onClick={() => scroll(popularMoviesRef, -1)}>{"<"}</button>
+        <div className="container" ref={popularMoviesRef}>
           {popularMovies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
-        <button className="scroll-button right" onClick={() => scroll(movieContainerRef, 1)}>{">"}</button>
+        <button className="scroll-button right" onClick={() => scroll(popularMoviesRef, 1)}>{">"}</button>
       </div>
       
       <h2>Popular TV Series</h2>
       <div className="scroll-container">
-        <button className="scroll-button left" onClick={() => scroll(tvContainerRef, -1)}>{"<"}</button>
-        <div className="container" ref={tvContainerRef}>
+        <button className="scroll-button left" onClick={() => scroll(popularTVSeriesRef, -1)}>{"<"}</button>
+        <div className="container" ref={popularTVSeriesRef}>
           {popularTVSeries.map((tvSeries) => (
             <MovieCard key={tvSeries.id} movie={tvSeries} />
           ))}
         </div>
-        <button className="scroll-button right" onClick={() => scroll(tvContainerRef, 1)}>{">"}</button>
+        <button className="scroll-button right" onClick={() => scroll(popularTVSeriesRef, 1)}>{">"}</button>
       </div>
     </div>
   );
