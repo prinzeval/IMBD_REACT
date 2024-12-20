@@ -4,12 +4,11 @@ import './index.css'
 import App from './App.jsx'
 import ReactGA from "react-ga4";
 
-// ReactGA.initialize("G-39VDMNK3NP");
-// ReactGA.send({ 
-//   hitType: "pageview", 
-//   page: " window.location.pathname", 
-//   title: " window.document.title" 
-// });
+ReactGA.initialize("G-TFQ78P950K");
+ReactGA.send({ 
+  hitType: "pageview", 
+  page: " window.location.pathname"
+});
 
 
 createRoot(document.getElementById('root')).render(
