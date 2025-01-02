@@ -1,8 +1,31 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# IMDB React Movie App
 
-Currently, two official plugins are available:
+A React-based web application that fetches and displays trending movies, TV series, popular movies, and TV series using the TMDB API. The app supports dark mode, and users can toggle the time window for trending movies and series.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Environment Variables](#environment-variables)
+- [Scripts](#scripts)
+- [Deployment](#deployment)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+- [License](#license)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine
+- TMDB API Key
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/prinzeval/imbd-react.git
+   cd imbd-react
