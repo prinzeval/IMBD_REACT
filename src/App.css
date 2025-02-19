@@ -179,7 +179,6 @@ button:disabled {
 .welcome {
   position: relative;
   height: 100vh; /* Full viewport height */
-  background-image: url("/src/IMG/117328-1440x2560-mobile-hd-netflix-wallpaper-photo.jpg");
   background-size: cover;
   background-position: center; /* Center the image */
   display: flex;
@@ -187,6 +186,18 @@ button:disabled {
   justify-content: center;
   text-align: center;
   color: white;
+}
+
+/* Default background image for larger screens */
+.welcome {
+  background-image: url("https://wallpapercat.com/w/middle-retina/0/0/4/272048-2000x1125-desktop-hd-eragon-wallpaper-photo.jpg");
+}
+
+/* Background image for mobile screens */
+@media (max-width: 768px) {
+  .welcome {
+    background-image: url("https://wallpapercat.com/w/full/1/6/4/1248036-2083x3000-phone-hd-legend-of-the-seeker-tv-series-wallpaper-photo.jpg");
+  }
 }
 
 /* Gradient Overlay */
