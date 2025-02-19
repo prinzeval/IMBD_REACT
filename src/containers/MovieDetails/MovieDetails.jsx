@@ -4,11 +4,11 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import VideoPlayer from "./VideoPlayer";
-import DetailsInfo from "./DetailsInfo";
-import SeasonSelector from "./SeasonSelector";
-import EpisodeSelector from "./EpisodeSelector";
-import Recommendations from "../components/Recommendations";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import DetailsInfo from "../DetailsInfo/DetailsInfo";
+import SeasonSelector from "../SeasonSelector/SeasonSelector";
+import EpisodeSelector from "../EpisodeSelector/EpisodeSelector";
+import Recommendations from "../../components/Recommendations/Recommendations";
 
 const API_URL = "https://api.themoviedb.org/3/";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;

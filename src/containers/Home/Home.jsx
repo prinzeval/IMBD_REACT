@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import "./Home.css";
 
 const API_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -9,7 +10,7 @@ const Home = () => {
   const [trendingTVSeries, setTrendingTVSeries] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularTVSeries, setPopularTVSeries] = useState([]);
-  const [timeWindow, setTimeWindow] = useState("week"); // Default to "week"
+  const [timeWindow, setTimeWindow] = useState("week");
 
   const trendingMoviesRef = useRef(null);
   const trendingTVSeriesRef = useRef(null);
@@ -18,7 +19,7 @@ const Home = () => {
 
   const scroll = (containerRef, direction) => {
     containerRef.current.scrollBy({
-      left: direction * 200, // Adjust the scroll amount
+      left: direction * 200,
       behavior: 'smooth'
     });
   };

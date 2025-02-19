@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Download from "./Download"; // Import the Download component
+import Download from "../Download/Download";
+import "./VideoPlayer.css";
 
 const VideoPlayer = ({ location, id, imdb_id, selectedSeason, selectedEpisode }) => {
-  const [source, setSource] = useState("vidsrc"); // Default source
-  const [muted, setMuted] = useState(false); // State to control mute
+  const [source, setSource] = useState("vidsrc");
+  const [muted, setMuted] = useState(false);
 
   useEffect(() => {
-    // Unmute the video when source is set to vidlink
     if (source === "vidlink") {
       setMuted(false);
     }
@@ -51,7 +51,7 @@ const VideoPlayer = ({ location, id, imdb_id, selectedSeason, selectedEpisode })
     <div className="video-container large">
       <iframe
         src={getVideoSrc()}
-        style={{ width: "100%", height: "500px" }} // Increased height
+        style={{ width: "100%", height: "500px" }}
         frameBorder="0"
         referrerPolicy="origin"
         allowFullScreen
@@ -73,7 +73,7 @@ const VideoPlayer = ({ location, id, imdb_id, selectedSeason, selectedEpisode })
         <button
           onClick={() => {
             setSource("vidlink");
-            setMuted(false); // Unmute when selecting vidlink
+            setMuted(false);
           }}
           className={source === "vidlink" ? "active" : ""}
         >

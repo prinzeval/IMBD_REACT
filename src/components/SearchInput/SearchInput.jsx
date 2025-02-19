@@ -1,10 +1,8 @@
-// THIS IS src/components/SearchInput.jsx
-
-
 import React, { useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import SearchIcon from "../SVG/search.svg";
+import SearchIcon from "../../SVG/search.svg";
 import debounce from 'lodash.debounce';
+import "./SearchInput.css";
 
 const SearchInput = ({ searchTerm, setSearchTerm }) => {
   const navigate = useNavigate();

@@ -1,19 +1,17 @@
-// THIS IS src/components/SearchResults.jsx
-
-
 import React, { useState, useEffect } from "react";
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
-import MovieCard from "./MovieCard";
-import Welcome from "./Welcome"; // Import the new Welcome component
+import MovieCard from "../MovieCard/MovieCard";
+import Welcome from "../Welcome/Welcome";
+import "./SearchResult.css";
 
 const API_URL = "https://api.themoviedb.org/3/";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Use import.meta.env for Vite
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 const SearchResult = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
-  const query = searchParams.get("query") || ""; // Default to empty string
+  const query = searchParams.get("query") || "";
   const page = parseInt(searchParams.get("page")) || 1;
   const [movies, setMovies] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
@@ -49,10 +47,6 @@ const SearchResult = () => {
     const newPage = page + direction;
     if (newPage > 0 && newPage <= totalPages) {
       navigate(`/search?query=${query}&page=${newPage}`);
-      document.querySelector('.container').scrollBy({
-        left: direction * 200, // Adjust this value based on card width
-        behavior: 'smooth'
-      });
     }
   };
 

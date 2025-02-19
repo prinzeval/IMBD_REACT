@@ -1,7 +1,5 @@
-// THIS IS src/containers/DetailsInfo.jsx
-
-
 import React from "react";
+import "./DetailsInfo.css";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 

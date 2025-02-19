@@ -1,10 +1,16 @@
 /* Global Styles */
 body {
-  background-color: #141414;
-  color: #e5e5e5;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #000;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #181818;
+  color: #e5e5e5;
 }
 
 a {
@@ -41,7 +47,7 @@ button:disabled {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px ;
+  margin: 10px;
 }
 
 .search input {
@@ -57,27 +63,46 @@ button:disabled {
   cursor: pointer;
 }
 
-/* Container for horizontally scrolling movie cards */
-.container {
+/* Container Styles */
+/* Home container - keep flex display */
+.home-container .container {
   display: flex;
-  overflow-x: auto;
+  overflow-x:auto;
+  overflow-y: hidden;
   width: 100%;
-  max-width: 1200px; /* Adjust this width as needed */
-  margin: 0 auto;
-  padding: 20px 0;
-  scrollbar-width: thin; /* For Firefox */
+  margin: auto;
 }
 
-.container::-webkit-scrollbar {
-  height: 10px;
+/* Search results container - grid display */
+.search-results .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
 }
 
-.container::-webkit-scrollbar-thumb {
+/* Recommendations container - grid display */
+.recommendations .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.home-container .container::-webkit-scrollbar {
+  height: 1px;
+}
+
+.home-container .container::-webkit-scrollbar-thumb {
   background-color: #888;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
-.container::-webkit-scrollbar-thumb:hover {
+.home-container .container::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
 
@@ -90,22 +115,22 @@ button:disabled {
 .movie-link {
   color: inherit;
   display: inline-block;
-  margin-right: 20px; /* Adds space between movie cards */
+  margin-right: 5px;
 }
 
 .movie {
   background-color: #222;
-  border: 1px solid #444; /* Add border */
+  border: 1px solid #444;
   border-radius: 3px;
-  width: 200px; /* Fixed width */
-  height: 300px; /* Reduced fixed height */
-  flex: 0 0 200px; /* Prevents movie cards from shrinking */
+  width: 183px;
+  height: 300px;
+  flex: 0 0 200px;
   transition: transform 0.3s;
 }
 
 .poster-container {
   width: 100%;
-  height: 70%; /* Adjust image height to fit within the fixed card height */
+  height: 80%;
   border-radius: 3px 3px 0 0;
   overflow: hidden;
 }
@@ -113,7 +138,7 @@ button:disabled {
 .poster-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the area */
+  object-fit: cover;
 }
 
 .movie:hover {
@@ -121,32 +146,31 @@ button:disabled {
 }
 
 .movie-info {
-  padding: 10px;
+  padding: 0 5px;
   text-align: center;
 }
 
 .movie-info h3 {
-  font-size: 16px;
+  font-size: 14px;
   color: #e5e5e5;
-  margin: 10px 0 5px 0;
+  margin: 0px 0 5px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .movie-info p {
-  font-size: 14px;
+  font-size: 12px;
   color: #999;
   margin: 5px 0 0 0;
 }
 
 .media-type {
-  display: inline-block;
-  padding: 3px 5px;
+  padding: 1px 3px;
   margin-top: 5px;
   font-size: 12px;
-  color: #e50914; /* Highlight color */
-  border: 1px solid #e50914; /* Visible border */
+  color: #e50914;
+  border: 1px solid #e50914;
   border-radius: 3px;
 }
 
@@ -157,18 +181,15 @@ button:disabled {
   border-radius: 10px;
   margin: 2rem auto;
   max-width: 800px;
-  
 }
 
 .welcome h1 {
-  color: #ff4500; /* Vibrant orange */
+  color: #ff4500;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-
 .welcome h2 {
- /* White text */
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -177,7 +198,6 @@ button:disabled {
   list-style: none;
   padding: 0;
   margin: 0 0 2rem 0;
-   /* White text */
 }
 
 .welcome ul li {
@@ -195,18 +215,6 @@ button:disabled {
   transform: translateY(-50%);
   font-size: 1.2rem;
 }
-
-.welcome p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-
-/* Adjusting Main Content for Navbar */
-.main-content {
-  padding-top: 70px; /* Adjust for fixed Navbar */
-}
-
 
 /* Season and Episode Selector Styles */
 .season-episode-selector {
@@ -235,257 +243,20 @@ button:disabled {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  max-height: 200px; /* Adjust the height as needed */
-  overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.episode-buttons button {
-  background-color: #561717;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 3px;
-}
-
-.episode-buttons button:hover {
-  background-color: #e50914;
-}
-
-.episode-buttons button.active {
-  background-color: #e50914;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .details-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .details-info {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .details-info h2 {
-    font-size: 20px;
-  }
-
-  .details-info p {
-    font-size: 14px;
-  }
-
-  .details-poster {
-    max-width: 100%;
-  }
-
-  .navbar {
-    display: none; /* Hide desktop navbar on small screens */
-  }
-
-  .mobile-navbar {
-    display: flex; /* Show mobile navbar on small screens */
-  }
-
-  .episode-buttons {
-    max-height: 300px; /* Adjust for mobile view */
-    overflow-y: auto;
-  }
-}
-
-@media (min-width: 769px) {
-  .mobile-navbar {
-    display: none; /* Hide mobile navbar on large screens */
-  }
-
-  .navbar {
-    display: flex; /* Show desktop navbar on large screens */
-  }
-}
-
-
-
-
-
-/* DetailsInfo Styles */
-.details-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.details-poster {
-  width: 100%;
-  max-width: 300px; /* Set a maximum width */
-  border-radius: 3px;
-}
-
-.details-info {
-  width: 100%;
-  max-width: 800px; /* Set a maximum width for larger screens */
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #222;
-  border-radius: 5px;
-  text-align: left;
-}
-
-.details-info h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #e50914;
-}
-
-.details-info p {
-  font-size: 16px;
-  margin: 5px 0;
-  color: #e5e5e5;
-}
-
-.details-info p strong {
-  color: #e50914;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .details-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .details-info {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .details-info h2 {
-    font-size: 20px;
-  }
-
-  .details-info p {
-    font-size: 14px;
-  }
-
-  .details-poster {
-    max-width: 100%;
-  }
-
-  .navbar {
-    display: none; /* Hide desktop navbar on small screens */
-  }
-
-  .mobile-navbar {
-    display: flex; /* Show mobile navbar on small screens */
-  }
-}
-
-@media (min-width: 769px) {
-  .mobile-navbar {
-    display: none; /* Hide mobile navbar on large screens */
-  }
-
-  .navbar {
-    display: flex; /* Show desktop navbar on large screens */
-  }
-}
-
-/* Home Component Styles */
-.home-container {
-  padding: 20px;
-}
-
-.time-window-toggle {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.time-window-toggle button {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 3px;
-  transition: background-color 0.3s;
-}
-
-.time-window-toggle button.active {
-  background-color: #e50914;
-}
-
-.time-window-toggle button:hover {
-  background-color: #555;
-}
-
-.home-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #e50914;
-}
-
-/* Scroll Container and Buttons */
-.scroll-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.scroll-button {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.scroll-button.left {
-  left: 0;
-}
-
-.scroll-button.right {
-  right: 0;
-}
-
-.scroll-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.scroll-button:focus {
-  outline: none;
-}
-
-/* Base Styles */
-body {
-  background-color: #f0f0f0;
-  color: #000;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark-mode {
-  background-color: #181818;
-  color: #e5e5e5;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 /* Navbar Styles */
-.navbar {
+.navbar, .mobile-navbar {
+  position: fixed;
+  top: 0;
   width: 100%;
+  height: 60px; /* Adjust based on your navbar height */
   background-color: #181818;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
   z-index: 1000;
 }
 
@@ -508,9 +279,9 @@ body.dark-mode {
 }
 
 .logo {
-  width: 50px; /* Increased size */
-  height: 50px; /* Increased size */
-  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
 }
 
 .website-name {
@@ -531,11 +302,6 @@ body.dark-mode {
   transition: color 0.3s;
 }
 
-.menu-list-item a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .menu-list-item:hover,
 .menu-list-item.active {
   color: #e50914;
@@ -554,66 +320,9 @@ body.dark-mode {
   background-color: #555;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #181818;
-  color: #e5e5e5;
-}
-
-/* Mobile Navbar Styles */
+/* Mobile Navbar Specific Styles */
 .mobile-navbar {
-  display: none; /* Initially hidden */
-}
-
-.mobile-navbar .navbar-container {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mobile-navbar .logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.mobile-navbar .logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.mobile-navbar .logo {
-  width: 50px; /* Keep the same size as desktop */
-  height: 50px;
-  margin-right: 10px;
-}
-
-.mobile-navbar .website-name {
-  font-size: 20px;
-  color: #e50914;
-  font-weight: bold;
-}
-
-.mobile-navbar .search-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  
-}
-
-.mobile-navbar .toggle {
-  background-color: #333;
-  color: #e5e5e5;
-  padding: 5px px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  margin-right:9px ;
-}
-
-.mobile-navbar .toggle:hover {
-  background-color: #555;
+  display: none;
 }
 
 .mobile-navbar .hamburger-icon {
@@ -631,6 +340,12 @@ body.dark-mode {
 
 .mobile-navbar .dropdown {
   display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 50%;
+  z-index: 9999;
+  background-color: #181818;
 }
 
 .mobile-navbar .dropdown.open {
@@ -641,7 +356,6 @@ body.dark-mode {
   list-style: none;
   padding: 0;
   margin: 0;
-  background-color: #181818;
   border-top: 1px solid #333;
 }
 
@@ -650,52 +364,55 @@ body.dark-mode {
   border-bottom: 1px solid #333;
 }
 
-.mobile-navbar .dropdown-menu .menu-list-item a {
-  color: #e5e5e5;
-  display: block;
-}
-
-.mobile-navbar .dropdown-menu .menu-list-item:hover,
-.mobile-navbar .dropdown-menu .menu-list-item.active {
+.mobile-navbar .dropdown-menu .menu-list-item:hover {
   background-color: #333;
 }
 
-.mobile-navbar .dropdown-menu .submenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* DetailsInfo Styles */
+.details-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px auto;
 }
 
-.mobile-navbar .dropdown-menu .submenu li {
-  padding: 5px 20px;
+.details-poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 3px;
 }
 
-.mobile-navbar .dropdown-menu .submenu li a {
+.details-info {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px 0;
+  padding: 120px;
+  background-color: #222;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.details-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #94e509;
+}
+
+.details-info p {
+  font-size: 16px;
+  margin: 5px 0;
   color: #e5e5e5;
 }
-@media (max-width: 768px) {
-  .navbar {
-    display: none; /* Hide desktop navbar on small screens */
-  }
 
-  .mobile-navbar {
-    display: flex; /* Show mobile navbar on small screens */
-  }
-}
-
-@media (min-width: 769px) {
-  .mobile-navbar {
-    display: none; /* Hide mobile navbar on large screens */
-  }
-
-  .navbar {
-    display: flex; /* Show desktop navbar on large screens */
-  }
+.details-info p strong {
+  color: #e5da09;
 }
 
 /* Home Component Styles */
 .home-container {
   padding: 20px;
+  padding-top: 80px; /* Add padding to avoid navbar overlap */
 }
 
 .time-window-toggle {
@@ -720,7 +437,7 @@ body.dark-mode {
 }
 
 .time-window-toggle button:hover {
-  background-color: #555;
+  background-color: #555555;
 }
 
 .home-container h2 {
@@ -765,188 +482,45 @@ body.dark-mode {
   outline: none;
 }
 
-/* Base Styles */
-body {
-  background-color: #f0f0f0;
-  color: #000;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark-mode {
-  background-color: #181818;
-  color: #e5e5e5;
-}
-
-/* Navbar Styles */
-.navbar {
-  width: 100%;
-  background-color: #181818;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar-container {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo {
-  width: 50px; /* Increased size */
-  height: 50px; /* Increased size */
-  margin-right: 10px;
-}
-
-.website-name {
-  font-size: 24px;
-  color: #e50914;
-  font-weight: bold;
-}
-
-.menu-container .menu-list {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.menu-list-item {
-  color: #e5e5e5;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.menu-list-item a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.menu-list-item:hover,
-.menu-list-item.active {
-  color: #e50914;
-}
-
-.toggle {
-  background-color: #333;
-  color: #e5e5e5;
-  padding: 5px 10px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.toggle:hover {
-  background-color: #555;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #181818;
-  color: #e5e5e5;
-}
-
-body {
-  background-color: #f0f0f0;
-  color: #000;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Ensure movie cards maintain their height and do not shrink */
-.container .movie {
-  flex: 0 0 auto;
-}
-
-.movie-card {
-  background-color: #222;
-  border-radius: 5px;
-  overflow: hidden;
-  padding: 15px;
-  margin: 0 10px;
-  text-align: center;
-  color: white;
-}
-
-.movie-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.movie-card h3 {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.movie-card p {
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #181818;
-  color: #e5e5e5;
-}
-
-/* Mobile Navbar Styles */
-.mobile-navbar {
-  display: none; /* Initially hidden */
-  position: relative;
-  z-index: 10000; /* Ensure a high z-index */
-   /* Add background color for visibility */
-  width: 100%; /* Full width */
-}
-
-/* Media query for small screens */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
-    display: none; /* Hide desktop navbar on small screens */
+    display: none;
   }
 
   .mobile-navbar {
-    display: flex; /* Show mobile navbar on small screens */
-    position: fixed; /* Make it fixed to float over everything */
-    top: 0;
-    left: 0;
-    z-index: 10000; /* High z-index to float over everything */
-     /* Add background color for visibility */
-    width: 100%; /* Full width */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add a subtle shadow for separation */
+    display: flex;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 100%; /* Position below the navbar */
-    right: 0;
-    width: 50%; /* Full width */
-    z-index: 9999; /* Ensure it's above other content but below the navbar */
-    background-color: white; /* Match background color for visibility */
+  .details-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-info {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .details-info h2 {
+    font-size: 20px;
+  }
+
+  .details-info p {
+    font-size: 14px;
+  }
+
+  .details-poster {
+    max-width: 100%;
   }
 }
 
-/* Media query for large screens */
 @media (min-width: 769px) {
   .mobile-navbar {
-    display: none; /* Hide mobile navbar on large screens */
+    display: none;
   }
 
   .navbar {
-    display: flex; /* Show desktop navbar on large screens */
+    display: flex;
   }
 }

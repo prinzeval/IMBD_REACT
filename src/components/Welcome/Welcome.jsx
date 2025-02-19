@@ -1,9 +1,7 @@
 import React from "react";
+import "./Welcome.css";
 
 const Welcome = () => {
-
-
-
   return (
     <div className="welcome">
       <h1>Welcome To Mytvv Free Movies, Home To Paradise!</h1>

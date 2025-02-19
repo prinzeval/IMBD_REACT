@@ -1,17 +1,16 @@
-// THIS IS src/components/MobileNav.jsx
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "../IMG/Logo.png";
-import SearchInput from "./SearchInput"; // Import the SearchInput component
+import logo from "../../IMG/Logo.png";
+import SearchInput from "../SearchInput/SearchInput";
+import "./MobileNav.css";
 
 const MobileNav = () => {
-  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
+  const [darkMode, setDarkMode] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    document.body.classList.add('dark-mode'); // Ensure dark mode is enabled by default
+    document.body.classList.add('dark-mode');
   }, []);
 
   const toggleDarkMode = () => {
