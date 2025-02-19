@@ -175,45 +175,116 @@ button:disabled {
 }
 
 /* Welcome Component Styles */
+/* Welcome Container */
 .welcome {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 10px;
-  margin: 2rem auto;
-  max-width: 800px;
-}
-
-.welcome h1 {
-  color: #ff4500;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.welcome h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.welcome ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-}
-
-.welcome ul li {
-  font-size: 1.2rem;
-  margin: 1rem 0;
   position: relative;
-  padding-left: 30px;
+  height: 100vh; /* Full viewport height */
+  background-image: url("/src/IMG/117328-1440x2560-mobile-hd-netflix-wallpaper-photo.jpg");
+  background-size: cover;
+  background-position: center; /* Center the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.welcome ul li::before {
-  content: "✔️";
+/* Gradient Overlay */
+.welcome::before {
+  content: "";
   position: absolute;
-  left: 0;
   top: 0;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  ); /* Gradient overlay */
+}
+
+/* Welcome Content */
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Heading Styles */
+.welcome-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-content h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Feature Styles */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  max-width: 250px;
+  text-align: center;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.feature p {
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Text */
+.footer-text {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
 }
 
 /* Season and Episode Selector Styles */

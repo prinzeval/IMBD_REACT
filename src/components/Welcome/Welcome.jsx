@@ -4,20 +4,31 @@ import "./Welcome.css";
 const Welcome = () => {
   return (
     <div className="welcome">
-      <h1>Welcome To Mytvv Free Movies, Home To Paradise!</h1>
-      <h2>Movies Organized Using IMDb Details, Top Trending Movies, and Shows</h2>
-      <ul>
-        <li>🎬 No Ads</li>
-        <li>⚡ Free and Fast Streaming Server</li>
-        <li>🆓 No Account Required to Watch</li>
-        <li>🎉 One-Click Streaming</li>
-        <li>📥 Movie Downloads</li>
-        <li>📚 Huge Library with Over 400,000 Videos</li>
-      </ul>
-      <p>
-        Search for your favorite movies and TV shows. Desktop view is available
-        with extra features, and mobile view is tailored with a nice taste! ☺️
-      </p>
+      <div className="welcome-content">
+        <h1>Welcome to MYTVV.NET</h1>
+        <h2>Your Home for Free Movies and Shows</h2>
+        <p>Unlimited streaming of movies and TV shows with no ads.</p>
+        <div className="features">
+          <div className="feature">
+            <h3>Ad-Free</h3>
+          </div>
+          <div className="feature">
+            <h3>Instant Access</h3>
+          </div>
+          <div className="feature">
+            <h3>Fast Streaming</h3>
+          </div>
+          <div className="feature">
+            <h3>Huge Library</h3>
+          </div>
+          <div className="feature">
+            <h3>Downloadable Content</h3>
+          </div>
+        </div>
+        <p className="footer-text">
+          Discover a tailored viewing experience on both desktop and mobile.
+        </p>
+      </div>
     </div>
   );
 };
