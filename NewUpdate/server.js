@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 app.use(cors());
 
-// Serve static files (including HTML)
+// Serve static files (including HTML)   ok restartimg the server
 app.use(express.static(path.join(__dirname)));
 
 // Proxy endpoint for streaming
