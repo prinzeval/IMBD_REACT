@@ -5,71 +5,129 @@ import SearchInput from "../SearchInput/SearchInput";
 import "./MobileNav.css";
 
 const MobileNav = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  // Initialize darkMode state from localStorage or default to true
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === null ? true : savedTheme === 'dark';
+  });
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    document.body.classList.add('dark-mode');
-  }, []);
+    // Apply the theme immediately on mount
+    document.body.classList.toggle('dark-mode', darkMode);
+
+    // Listen for theme changes from other components (e.g., Navbar)
+    const handleThemeChange = () => {
+      const savedTheme = localStorage.getItem('theme');
+      const isDarkMode = savedTheme === null ? true : savedTheme === 'dark';
+      setDarkMode(isDarkMode);
+      document.body.classList.toggle('dark-mode', isDarkMode);
+    };
+
+    window.addEventListener('theme-changed', handleThemeChange);
+
+    return () => {
+      window.removeEventListener('theme-changed', handleThemeChange);
+    };
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode', !darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.body.classList.toggle('dark-mode', newDarkMode);
+
+    // Save theme preference to localStorage
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
+
+    // Dispatch custom event to sync with other components
+    window.dispatchEvent(new Event('theme-changed'));
   };
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
   return (
-    <div className="mobile-navbar">
-      <div className="navbar-container">
-        <div className="logo-container">
-          <Link to="/" className="logo-link">
-            <img src={logo} alt="Logo" className="logo" />
-            <span className="website-name">MYTVV</span>
+    <>
+      {/* Mobile Navbar */}
+      <div className="mobile-navbar">
+        <div className="mobile-nav-container">
+          <div className="mobile-logo">
+            <Link to="/" className="mobile-logo-link">
+              <img src={logo} alt="Logo" className="mobile-logo-img" />
+              <span className="mobile-brand">MYTVV</span>
+            </Link>
+          </div>
+
+          <div className="mobile-nav-right">
+            <div className="mobile-search">
+              <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            </div>
+            <button className="mobile-theme-toggle" onClick={toggleDarkMode}>
+              {darkMode ? '🌞' : '🌙'}
+            </button>
+            <button className="mobile-menu-toggle" onClick={toggleSidebar}>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div className="mobile-sidebar-overlay" onClick={closeSidebar}></div>
+      )}
+
+      {/* Mobile Sidebar */}
+      <div className={`mobile-sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <div className="mobile-sidebar-header">
+          <div className="mobile-sidebar-logo">
+            <img src={logo} alt="Logo" />
+            <span>MYTVV</span>
+          </div>
+          <button className="mobile-sidebar-close" onClick={closeSidebar}>
+            ✕
+          </button>
+        </div>
+
+        <nav className="mobile-sidebar-nav">
+          <Link to="/home" className="mobile-nav-item" onClick={closeSidebar}>
+            <span className="nav-icon">🏠</span>
+            <span>Home</span>
           </Link>
-        </div>
-        <div className="search-container">
-          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        </div>
-        <div className="toggle" onClick={toggleDarkMode}>
-          {darkMode ? '🌞' : '🌜'}
-        </div>
-        <div className="hamburger-icon" onClick={toggleSidebar}>
-          ☰
+          <Link to="/tv-shows" className="mobile-nav-item" onClick={closeSidebar}>
+            <span className="nav-icon">📺</span>
+            <span>TV Shows</span>
+          </Link>
+          <Link to="/movies" className="mobile-nav-item" onClick={closeSidebar}>
+            <span className="nav-icon">🎬</span>
+            <span>Movies</span>
+          </Link>
+          <Link to="/trending" className="mobile-nav-item" onClick={closeSidebar}>
+            <span className="nav-icon">🔥</span>
+            <span>New & Popular</span>
+          </Link>
+          <Link to="/country" className="mobile-nav-item" onClick={closeSidebar}>
+            <span className="nav-icon">🌍</span>
+            <span>Country</span>
+          </Link>
+        </nav>
+
+        <div className="mobile-sidebar-footer">
+          <button className="mobile-theme-btn" onClick={toggleDarkMode}>
+            <span className="nav-icon">{darkMode ? '🌞' : '🌙'}</span>
+            <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+          </button>
         </div>
       </div>
-      <div className={`dropdown ${sidebarOpen ? 'open' : ''}`} onClick={toggleSidebar}>
-        <button className="dropdown-toggle" onClick={toggleSidebar}>
-          ☰
-        </button>
-        {sidebarOpen && (
-          <ul className="dropdown-menu">
-            <li className="menu-list-item">
-              <Link to="/home">Home</Link>
-            </li>
-            <li className="menu-list-item">
-              <Link to="/popular-tv">Popular TV</Link>
-            </li>
-            <li className="menu-list-item">
-              Genre
-              <hr className="lineline" style={{borderColor:"red"}}/>
-              <ul className="submenu">
-                <li><Link to="/genre/action">Action</Link></li>
-                <li><Link to="/genre/comedy">Comedy</Link></li>
-                <li><Link to="/genre/drama">Drama</Link></li>
-              </ul>
-            </li>
-            <li className="menu-list-item">Country</li>
-            <li className="menu-list-item">Movies</li>
-            <li className="menu-list-item">TV Shows</li>
-            <li className="menu-list-item">Top IMDB</li>
-          </ul>
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 

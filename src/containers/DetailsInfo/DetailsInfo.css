@@ -1,0 +1,313 @@
+/* Netflix/Prime Video Style Movie Details - Perfect Layout */
+.movie-details-page {
+    background-color: #141414;
+    min-height: 100vh;
+    padding-top: 70px;
+    /* Account for fixed navbar */
+}
+
+/* Hero Section - Full Screen Background */
+.movie-hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.movie-hero-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.movie-hero-backdrop-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.movie-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 30%,
+            rgba(0, 0, 0, 0.5) 70%,
+            rgba(0, 0, 0, 0.9) 100%);
+    z-index: 2;
+}
+
+.movie-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 0 4%;
+    padding-bottom: 80px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.movie-hero-info {
+    max-width: 800px;
+    color: white;
+}
+
+.movie-hero-title {
+    font-size: 56px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+}
+
+.movie-hero-meta {
+    margin-bottom: 30px;
+}
+
+.movie-hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: fit-content;
+}
+
+.movie-rating-stars {
+    color: #ffd700;
+    font-size: 18px;
+}
+
+.movie-rating-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #e50914;
+}
+
+.movie-rating-total {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.movie-rating-count {
+    font-size: 14px;
+    color: #999;
+}
+
+.movie-hero-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.movie-genre-tag {
+    padding: 6px 16px;
+    background: rgba(229, 9, 20, 0.2);
+    border: 1px solid rgba(229, 9, 20, 0.5);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #e50914;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.movie-hero-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.movie-detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-detail-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e50914;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.movie-detail-value {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.movie-hero-overview {
+    margin-bottom: 40px;
+}
+
+.movie-hero-overview p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #e5e5e5;
+    margin: 0;
+    max-width: 600px;
+}
+
+.movie-hero-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.movie-hero-play-btn {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.movie-hero-play-btn:hover {
+    background: linear-gradient(135deg, #f40612, #e50914);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+.movie-hero-info-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.movie-hero-info-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Video Section */
+.video-section {
+    padding: 40px 4%;
+    background-color: #141414;
+}
+
+.video-section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.video-section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-section-header p {
+    font-size: 16px;
+    color: #b3b3b3;
+    margin: 0;
+}
+
+.season-episode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .movie-hero-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-hero-section {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .movie-hero-title {
+        font-size: 36px;
+    }
+
+    .movie-hero-details {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .movie-hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .movie-hero-play-btn,
+    .movie-hero-info-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-hero-title {
+        font-size: 28px;
+    }
+
+    .movie-hero-overview p {
+        font-size: 16px;
+    }
+
+    .movie-hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .movie-hero-play-btn,
+    .movie-hero-info-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

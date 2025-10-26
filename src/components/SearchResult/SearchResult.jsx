@@ -51,16 +51,26 @@ const SearchResult = () => {
   };
 
   return (
-    <div>
+    <div className="search-results-container">
       {location.pathname === "/" && <Welcome />}
+      {query && (
+        <div className="search-results-header">
+          <h1 className="search-results-title">
+            Search Results for "{query}"
+          </h1>
+          <p className="search-results-subtitle">
+            {movies.length} {movies.length === 1 ? 'result' : 'results'} found
+          </p>
+        </div>
+      )}
       {movies.length > 0 ? (
         <>
-          <div className="container">
+          <div className="search-results-grid">
             {movies.map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
           </div>
-          <div className="pagination">
+          <div className="search-pagination">
             <button onClick={() => handlePageChange(-1)} disabled={page === 1}>
               Previous
             </button>
@@ -77,8 +87,9 @@ const SearchResult = () => {
         </>
       ) : (
         query && (
-          <div className="empty">
-            <h2>No movies found</h2>
+          <div className="search-empty">
+            <h2>No results found</h2>
+            <p>Try searching for something else</p>
           </div>
         )
       )}

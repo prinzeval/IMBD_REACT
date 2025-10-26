@@ -1,0 +1,564 @@
+/* Movie Details Hero - Separate Component */
+.movie-details-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-top: 0;
+    /* Remove margin to prevent black bars */
+}
+
+.movie-details-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.movie-details-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.movie-details-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 30%,
+            rgba(0, 0, 0, 0.5) 70%,
+            rgba(0, 0, 0, 0.9) 100%);
+    z-index: 2;
+}
+
+.movie-details-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 0 4%;
+    padding-bottom: 80px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.movie-details-info {
+    max-width: 800px;
+    color: white;
+}
+
+.movie-details-title {
+    font-size: 56px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+}
+
+.movie-details-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: fit-content;
+}
+
+.movie-rating-stars {
+    color: #ffd700;
+    font-size: 18px;
+}
+
+.movie-rating-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #e50914;
+}
+
+.movie-rating-total {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.movie-rating-count {
+    font-size: 14px;
+    color: #999;
+}
+
+.movie-details-genres {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.movie-genre-tag {
+    padding: 6px 16px;
+    background: rgba(229, 9, 20, 0.2);
+    border: 1px solid rgba(229, 9, 20, 0.5);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #e50914;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.movie-details-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.movie-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-meta-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e50914;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.movie-meta-value {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.movie-details-synopsis {
+    margin-bottom: 40px;
+}
+
+.movie-details-synopsis p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #e5e5e5;
+    margin: 0;
+    max-width: 600px;
+}
+
+.movie-details-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.movie-play-button {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.movie-play-button:hover {
+    background: linear-gradient(135deg, #f40612, #e50914);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+.movie-info-button {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.movie-info-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Video Player Modal */
+.video-player-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-player-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.server-selection {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.server-selection h3 {
+    color: #e50914;
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.server-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.server-btn {
+    background: linear-gradient(135deg, #333, #555);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+}
+
+.server-btn:hover {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    border-color: #e50914;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.server-btn.active {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    border-color: #e50914;
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.3);
+}
+
+.close-video-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-video-btn:hover {
+    background: rgba(229, 9, 20, 0.8);
+    transform: scale(1.1);
+}
+
+.video-player-iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* More Info Modal */
+.more-info-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-info-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 30px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-info-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-info-btn:hover {
+    background: rgba(229, 9, 20, 0.8);
+    transform: scale(1.1);
+}
+
+.more-info-content h2 {
+    color: #e50914;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.additional-info p {
+    margin-bottom: 15px;
+    color: #e5e5e5;
+    line-height: 1.6;
+}
+
+.additional-info strong {
+    color: #e50914;
+}
+
+/* Mobile Video Player Modal */
+@media (max-width: 768px) {
+    .video-player-content {
+        width: 95%;
+        height: 70vh;
+        margin: 0 auto;
+    }
+
+    .server-selection {
+        padding: 10px 15px;
+    }
+
+    .server-buttons {
+        gap: 6px;
+    }
+
+    .server-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 80px;
+    }
+
+    .close-video-btn {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-player-content {
+        width: 98%;
+        height: 60vh;
+    }
+
+    .server-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .server-btn {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* Netflix/Prime Mobile Design */
+@media (max-width: 768px) {
+    .movie-details-hero {
+        height: 100vh;
+        padding-top: 60px;
+        /* Account for mobile navbar */
+    }
+
+    .movie-details-content {
+        padding: 0 16px;
+        padding-bottom: 40px;
+    }
+
+    .movie-details-title {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .movie-details-rating {
+        margin-bottom: 12px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .movie-rating-value {
+        font-size: 20px;
+    }
+
+    .movie-details-genres {
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+
+    .movie-genre-tag {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+
+    .movie-details-meta {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .movie-meta-item {
+        padding: 12px 16px;
+    }
+
+    .movie-meta-label {
+        font-size: 11px;
+    }
+
+    .movie-meta-value {
+        font-size: 14px;
+    }
+
+    .movie-details-synopsis {
+        margin-bottom: 24px;
+    }
+
+    .movie-details-synopsis p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .movie-details-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .movie-play-button,
+    .movie-info-button {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 16px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-details-hero {
+        padding-top: 50px;
+    }
+
+    .movie-details-content {
+        padding: 0 12px;
+        padding-bottom: 30px;
+    }
+
+    .movie-details-title {
+        font-size: 28px;
+    }
+
+    .movie-details-rating {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .movie-rating-value {
+        font-size: 18px;
+    }
+
+    .movie-genre-tag {
+        padding: 3px 10px;
+        font-size: 11px;
+    }
+
+    .movie-meta-item {
+        padding: 10px 12px;
+    }
+
+    .movie-details-synopsis p {
+        font-size: 15px;
+    }
+
+    .movie-play-button,
+    .movie-info-button {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .movie-details-title {
+        font-size: 48px;
+    }
+}

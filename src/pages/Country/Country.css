@@ -1,0 +1,472 @@
+/* Country Page Styles */
+.country-page {
+    min-height: 100vh;
+    background: #141414;
+    color: #ffffff;
+    padding-top: 70px;
+}
+
+/* Country Hero Section */
+.country-hero {
+    position: relative;
+    height: 60vh;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2a2a2a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.country-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(229, 9, 20, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.country-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.country-flag-large {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.country-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffffff, #e50914);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.country-hero p {
+    font-size: 1.2rem;
+    color: #b3b3b3;
+    margin-bottom: 0;
+}
+
+/* Country Content */
+.country-content {
+    padding: 40px 4%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.country-selector-container {
+    margin-left: auto;
+}
+
+.country-select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.country-select:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.country-select:focus {
+    outline: none;
+    border-color: #e50914;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    position: relative;
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+}
+
+.tab-btn.active {
+    color: #ffffff;
+    border-bottom-color: #e50914;
+    background: rgba(229, 9, 20, 0.1);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #e50914, #f40612);
+    border-radius: 2px;
+}
+
+/* Content Sections */
+.content-section {
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.movies-section,
+.tv-section {
+    margin-bottom: 60px;
+}
+
+.movies-section h2,
+.tv-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+    padding-left: 15px;
+}
+
+.movies-section h2::before,
+.tv-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 30px;
+    background: linear-gradient(135deg, #e50914, #f40612);
+    border-radius: 2px;
+}
+
+/* Grid Layouts */
+.movies-grid,
+.tv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Pagination Styles */
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 15px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    text-align: center;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: rgba(229, 9, 20, 0.2);
+    border-color: rgba(229, 9, 20, 0.5);
+    transform: translateY(-1px);
+}
+
+.pagination-btn.active {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    border-color: #e50914;
+    color: white;
+    font-weight: 600;
+}
+
+.pagination-btn:disabled {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: none;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-info {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Loading and Error States */
+.loading-container,
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(229, 9, 20, 0.3);
+    border-top: 4px solid #e50914;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container p,
+.error-container p {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+}
+
+.error-container button {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.error-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .country-page {
+        padding-top: 60px;
+    }
+
+    .country-hero {
+        height: 50vh;
+        padding: 20px;
+    }
+
+    .country-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .country-hero p {
+        font-size: 1rem;
+    }
+
+    .country-flag-large {
+        font-size: 3rem;
+    }
+
+    .country-content {
+        padding: 30px 20px;
+    }
+
+    .tab-navigation {
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .tab-btn {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+
+    .country-selector-container {
+        margin-left: 0;
+        width: 100%;
+        order: 1;
+    }
+
+    .country-select {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .movies-section h2,
+    .tv-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .movies-grid,
+    .tv-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .country-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .country-flag-large {
+        font-size: 2.5rem;
+    }
+
+    .tab-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tab-btn {
+        text-align: center;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .movies-grid,
+    .tv-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+    }
+}
+
+/* Light Mode Styles for Country Page */
+body:not(.dark-mode) .country-page {
+    background: #ffffff;
+    color: #333333;
+}
+
+body:not(.dark-mode) .country-hero {
+    background: linear-gradient(135deg,
+            rgba(229, 9, 20, 0.8) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.9) 100%);
+}
+
+body:not(.dark-mode) .country-hero-title {
+    color: #333333;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+body:not(.dark-mode) .country-hero-description {
+    color: #666666;
+}
+
+body:not(.dark-mode) .tab-btn {
+    color: #666666;
+}
+
+body:not(.dark-mode) .tab-btn:hover {
+    color: #333333;
+}
+
+body:not(.dark-mode) .tab-btn.active {
+    color: #ffffff;
+    background: rgba(229, 9, 20, 0.1);
+    border-bottom-color: #e50914;
+}
+
+body:not(.dark-mode) .movies-section h2,
+body:not(.dark-mode) .tv-section h2 {
+    color: #333333;
+    border-left-color: #e50914;
+}
+
+body:not(.dark-mode) .pagination-btn {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #333333;
+}
+
+body:not(.dark-mode) .pagination-btn:hover:not(:disabled) {
+    background: rgba(229, 9, 20, 0.2);
+    border-color: rgba(229, 9, 20, 0.5);
+}
+
+body:not(.dark-mode) .pagination-btn.active {
+    background: linear-gradient(135deg, #e50914, #f40612);
+    border-color: #e50914;
+    color: white;
+}
+
+body:not(.dark-mode) .pagination-info {
+    color: #666666;
+}
