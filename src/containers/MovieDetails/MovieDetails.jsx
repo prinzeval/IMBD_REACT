@@ -20,8 +20,8 @@ const MovieDetails = () => {
   const [loadingEpisodes, setLoadingEpisodes] = useState(false);
   const [selectedEpisode, setSelectedEpisode] = useState(null);
   const [showEpisodeModal, setShowEpisodeModal] = useState(false);
-  const [selectedEpisodeServer, setSelectedEpisodeServer] = useState('vidplus');
-  const [selectedServer, setSelectedServer] = useState('vidplus');
+  const [selectedEpisodeServer, setSelectedEpisodeServer] = useState('vidsrc-embed');
+  const [selectedServer, setSelectedServer] = useState('vidsrc-embed');
   const [defaultEpisode, setDefaultEpisode] = useState(null); // For auto-loading default episode
   const [muted, setMuted] = useState(false);
 
@@ -103,19 +103,26 @@ const MovieDetails = () => {
     setSelectedEpisode(null);
   };
 
-  // Episode server options - 6 working servers with VidPlus as default
+  // Episode server options - 7 working servers with VidSrc Embed as default
   const episodeServers = [
-    { id: 'vidplus', name: 'VidPlus', url: `https://player.vidplus.to/embed/tv/${id}/${selectedSeason}/{episode}?autoplay=true&poster=true&title=true&download=true&watchparty=false&chromecast=true&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fi.ibb.co%2F67wTJd9R%2Fpngimg-com-netflix-PNG11.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5&server=3` },
+    { id: 'vidsrc-embed', name: 'VidSrc Embed', url: `https://vidsrc-embed.ru/embed/tv?tmdb=${id}&season=${selectedSeason}&episode={episode}` },
     { id: 'vidsrc', name: 'VidSrc', url: `https://vidsrc.xyz/embed/tv?tmdb=${id}&season=${selectedSeason}&episode={episode}` },
     { id: 'vidlink', name: 'VidLink', url: `https://vidlink.pro/tv/${id}/${selectedSeason}/{episode}` },
     { id: 'vidsrc-cc', name: 'VidSrc.cc', url: `https://vidsrc.cc/v2/embed/tv/${id}/${selectedSeason}/{episode}?autoPlay=false` },
-    { id: 'vidsrc-vip', name: 'VidSrc.vip', url: `https://vidsrc.vip/embed/tv/${id}/${selectedSeason}/{episode}` },
-    { id: 'smashy-stream', name: 'Smashy.stream', url: `https://player.smashy.stream/tv/${id}?s=${selectedSeason}&e={episode}` }
+    { id: 'vidrock', name: 'VidRock', url: `https://vidrock.net/tv/${details?.imdb_id || id}/${selectedSeason}/{episode}` },
+    { id: 'smashy-stream', name: 'Smashy.stream', url: `https://player.smashy.stream/tv/${id}?s=${selectedSeason}&e={episode}` },
+    { id: 'vidplus', name: 'VidPlus', url: `https://player.vidplus.to/embed/tv/${id}/${selectedSeason}/{episode}?autoplay=true&poster=true&title=true&download=true&watchparty=false&chromecast=true&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fi.ibb.co%2F67wTJd9R%2Fpngimg-com-netflix-PNG11.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5&server=3` }
   ];
 
   const getEpisodeUrl = (serverId, episodeNumber) => {
     const server = episodeServers.find(s => s.id === serverId);
     if (!server) return '';
+
+    // Handle vidrock which uses a different URL format
+    if (serverId === 'vidrock') {
+      return `https://vidrock.net/tv/${details?.imdb_id || id}/${selectedSeason}/${episodeNumber}`;
+    }
+
     return server.url.replace('{episode}', episodeNumber);
   };
 
@@ -133,14 +140,15 @@ const MovieDetails = () => {
     }
   };
 
-  // Server options for movies/TV shows - 6 working servers with VidPlus as default
+  // Server options for movies/TV shows - 7 working servers with VidSrc Embed as default
   const movieServers = [
-    { id: 'vidplus', name: 'VidPlus', url: `https://player.vidplus.to/embed/movie/${id}?autoplay=true&poster=true&title=true&download=true&watchparty=false&chromecast=true&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fi.ibb.co%2F67wTJd9R%2Fpngimg-com-netflix-PNG11.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5&server=3` },
+    { id: 'vidsrc-embed', name: 'VidSrc Embed', url: `https://vidsrc-embed.ru/embed/movie?tmdb=${id}` },
     { id: 'vidsrc', name: 'VidSrc', url: `https://vidsrc.xyz/embed/movie?imdb=${details?.imdb_id}` },
     { id: 'vidlink', name: 'VidLink', url: `https://vidlink.pro/movie/${id}` },
     { id: 'vidsrc-cc', name: 'VidSrc.cc', url: `https://vidsrc.cc/v2/embed/movie/${id}?autoPlay=false` },
-    { id: 'vidsrc-vip', name: 'VidSrc.vip', url: `https://vidsrc.vip/embed/movie/${id}` },
-    { id: 'smashy-stream', name: 'Smashy.stream', url: `https://player.smashy.stream/movie/${id}` }
+    { id: 'vidrock', name: 'VidRock', url: `https://vidrock.net/movie/${details?.imdb_id || id}` },
+    { id: 'smashy-stream', name: 'Smashy.stream', url: `https://player.smashy.stream/movie/${id}` },
+    { id: 'vidplus', name: 'VidPlus', url: `https://player.vidplus.to/embed/movie/${id}?autoplay=true&poster=true&title=true&download=true&watchparty=false&chromecast=true&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fi.ibb.co%2F67wTJd9R%2Fpngimg-com-netflix-PNG11.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5&server=3` }
   ];
 
   return (
@@ -186,6 +194,12 @@ const MovieDetails = () => {
                 <iframe
                   src={getEpisodeUrl(selectedEpisodeServer, selectedEpisode.episode_number)}
                   frameBorder="0"
+                  referrerPolicy="origin"
+                  allowFullScreen
+                  allowfullscreen="true"
+                  allow="fullscreen; autoplay; picture-in-picture; encrypted-media"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
                 ></iframe>
               ) : (
                 <div className="loading-player">
@@ -231,6 +245,12 @@ const MovieDetails = () => {
               <iframe
                 src={movieServers.find(s => s.id === selectedServer)?.url || ''}
                 frameBorder="0"
+                referrerPolicy="origin"
+                allowFullScreen
+                allowfullscreen="true"
+                allow="fullscreen; autoplay; picture-in-picture; encrypted-media"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
               ></iframe>
             </div>
 
